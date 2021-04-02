@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "none",
+    "module": "ESNext",
     "jsx": "react",
     "moduleResolution": "node",
     "target": "es6",
@@ -8,5 +8,5 @@
     "sourceMap": true,
     "outFile": "dist/bundle.js"
   },
-  "include": ["src"]
+  "include": ["stories"]
 }
