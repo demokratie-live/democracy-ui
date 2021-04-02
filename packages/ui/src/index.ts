@@ -1,1 +1,5 @@
-export * from './Example';
+/** TEST */
+export * from "./Example";
+
+/** THEME */
+export * from "./theme";

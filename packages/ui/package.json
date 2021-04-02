@@ -34,6 +34,7 @@
     "rollup-plugin-typescript2": "^0.30.0"
   },
   "peerDependencies": {
-    "react-native": "*"
+    "react-native": "*",
+    "styled-components": "*"
   }
 }

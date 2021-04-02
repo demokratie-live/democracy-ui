@@ -4,7 +4,8 @@
     "jsx": "react",
     "moduleResolution": "node",
     "target": "ESNext",
-    "lib": ["es2015", "dom", "dom.iterable"]
+    "lib": ["es2015", "dom", "dom.iterable"],
+    "skipLibCheck": true
   },
-  "include": ["stories", "packages"]
+  "include": ["stories", "packages", ".storybook"]
 }
