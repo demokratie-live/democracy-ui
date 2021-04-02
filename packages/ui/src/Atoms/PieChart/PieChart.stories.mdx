@@ -1,0 +1,13 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { PieChart } from ".";
+import { lightData } from "./data";
+
+<Meta title="Atoms/PieChart" component={PieChart} />
+
+# Welcome to Storybook Atoms
+
+<Canvas>
+  <Story name="PieChart" args={{ size: 72, data: lightData }}>
+    {PieChart.bind({})}
+  </Story>
+</Canvas>

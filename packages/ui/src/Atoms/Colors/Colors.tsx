@@ -2,7 +2,6 @@
 import React from "react";
 import { ScrollView } from "react-native";
 import { useTheme } from "styled-components/native";
-import { lightTheme } from "../../theme";
 
 import * as S from "./Colors.styled";
 

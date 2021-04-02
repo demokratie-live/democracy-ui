@@ -10,16 +10,16 @@ module.exports = {
     "@react-theming/storybook-addon",
     {
       name: "@storybook/addon-essentials",
-      options: {
-        backgrounds: false,
-      },
+      // options: {
+      //   backgrounds: false,
+      // },
     },
   ],
 
-  // reactOptions: {
-  //   fastRefresh: true,
-  //   strictMode: true,
-  // },
+  reactOptions: {
+    fastRefresh: true,
+    // strictMode: true,
+  },
 
   typescript: {
     check: true,
@@ -29,6 +29,7 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       "react-native$": "react-native-web",
+      "react-native-svg": "react-native-svg-web",
     };
 
     return config;
