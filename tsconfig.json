@@ -3,10 +3,8 @@
     "module": "ESNext",
     "jsx": "react",
     "moduleResolution": "node",
-    "target": "es6",
-    "lib": ["es2015", "dom", "dom.iterable"],
-    "sourceMap": true,
-    "outFile": "dist/bundle.js"
+    "target": "ESNext",
+    "lib": ["es2015", "dom", "dom.iterable"]
   },
-  "include": ["stories"]
+  "include": ["stories", "packages"]
 }
