@@ -118,8 +118,8 @@ export const darkColors: Colors = {
   },
   text: {
     primary: "#FFFFFF",
-    secondary: "#B5B5B5",
-    tertiary: "#424242",
+    secondary: "#424242",
+    tertiary: "#B5B5B5",
     colored: "#4494D3",
     danger: "#EC3E31",
     seperator: "#B5B5B5",

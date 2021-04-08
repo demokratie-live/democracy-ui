@@ -1,0 +1,68 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Button } from "../Button";
+
+<Meta
+  title="Atoms/Button"
+  component={Button}
+  argTypes={{
+    children: { type: { name: "string", required: false } },
+    variant: {
+      options: ["primary", "secondary", "danger", "danger-secondary"],
+      control: { type: "select" },
+    },
+  }}
+/>
+
+# Welcome to Storybook Atoms
+
+<Canvas>
+  <Story
+    name="Primary"
+    component={Button}
+    args={{
+      children: "Primary",
+      variant: "primary",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Secondary"
+    component={Button}
+    args={{
+      children: "Secondary",
+      variant: "secondary",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Danger"
+    component={Button}
+    args={{
+      children: "Danger",
+      variant: "danger",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Danger Secondary"
+    component={Button}
+    args={{
+      children: "Danger Secondary",
+      variant: "danger-secondary",
+    }}
+  >
+    {Button.bind({})}
+  </Story>
+</Canvas>
