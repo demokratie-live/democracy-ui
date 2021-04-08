@@ -5,16 +5,6 @@ import { useTheme } from "styled-components/native";
 
 import * as S from "./Colors.styled";
 
-interface Color {
-  title: string;
-  color: string;
-}
-
-interface ColorGroup {
-  title: string;
-  colors: Color[];
-}
-
 export const Colors: React.FC = () => {
   const theme = useTheme();
 
@@ -22,44 +12,37 @@ export const Colors: React.FC = () => {
     return <div>no theme</div>;
   }
 
-  const colorGroups = Object.keys(theme.colors).reduce<ColorGroup[]>(
-    (prev, color) => {
-      if (typeof (theme.colors as any)[color] === "string") {
-        const main: ColorGroup = prev.find(({ title }) => title === "main") || {
-          title: "main",
-          colors: [],
-        };
-
-        const restColors = prev.filter(({ title }) => title !== "main");
-        return [
-          ...restColors,
-
-          {
-            ...main,
-            colors: [
-              ...main.colors,
-              { title: color, color: (theme.colors as any)[color] },
-            ],
-          },
-        ];
+  const renderColorGroup = (colorGroup: any): React.ReactNodeArray => {
+    return Object.keys(colorGroup).map((key) => {
+      const colorItem = colorGroup[key];
+      const color = typeof colorItem === "string" ? colorItem : undefined;
+      if (color) {
+        return (
+          <>
+            <S.ColorItemColor color={color} />
+            <S.Text>{key}</S.Text>
+            <S.Text>{color}</S.Text>
+          </>
+        );
       }
       return [
-        ...prev,
-        {
-          title: color,
-          colors: Object.keys((theme.colors as any)[color]).map((title) => ({
-            title,
-            color: (theme.colors as any)[color][title],
-          })),
-        },
+        <S.ColorGroupContainer key={key}>
+          <S.GroupTitle>{key}</S.GroupTitle>{" "}
+          <S.Group>{renderColorGroup(colorItem)}</S.Group>
+        </S.ColorGroupContainer>,
       ];
-    },
-    [] as ColorGroup[]
-  );
+    });
+  };
+
+  const renderColors = () => {
+    const themeColors = theme.colors;
+    return renderColorGroup(themeColors);
+  };
 
   return (
     <ScrollView horizontal>
-      <ScrollView>
+      <ScrollView>{renderColors()}</ScrollView>
+      {/* <ScrollView>
         {colorGroups.map(({ title, colors }) => (
           <S.ColorGroupContainer key={title}>
             <S.GroupTitle>{title}</S.GroupTitle>
@@ -74,7 +57,7 @@ export const Colors: React.FC = () => {
             </S.Group>
           </S.ColorGroupContainer>
         ))}
-      </ScrollView>
+      </ScrollView> */}
     </ScrollView>
   );
 };
