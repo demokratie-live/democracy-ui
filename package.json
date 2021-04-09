@@ -23,10 +23,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
-    "@storybook/addon-actions": "^6.2.2",
-    "@storybook/addon-essentials": "^6.2.2",
-    "@storybook/addon-links": "^6.2.2",
-    "@storybook/react": "^6.2.2",
+    "@storybook/addon-actions": "^6.2.7",
+    "@storybook/addon-essentials": "^6.2.7",
+    "@storybook/addon-links": "^6.2.7",
+    "@storybook/react": "^6.2.7",
     "@types/react-native": "^0.64.2",
     "@types/styled-components-react-native": "^5.1.1",
     "babel-loader": "^8.2.2"
