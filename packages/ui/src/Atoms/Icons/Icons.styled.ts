@@ -7,9 +7,12 @@ export const Container = styled.View`
 export const IconContainer = styled.View`
   padding: 5px;
   margin: 5px;
-  background-color: ${({ theme }) => theme.colors.background.secondary};
+  background-color: ${({ theme }) => theme.colors.primary};
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Text = styled.Text`
   margin-top: 10px;
+  color: ${({ theme }) => theme.colors.text.primary};
 `;

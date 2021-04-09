@@ -1,11 +1,14 @@
 import * as React from 'react';
 import Svg, { SvgProps, Defs, Path, Use } from 'react-native-svg';
 
-export interface ThumbUpProps extends SvgProps {
+export interface ThumbUpIconProps extends SvgProps {
   color: string;
 }
 
-export const ThumbUp: React.FC<ThumbUpProps> = ({ color, ...props }) => {
+export const ThumbUpIcon: React.FC<ThumbUpIconProps> = ({
+  color,
+  ...props
+}) => {
   return (
     <Svg width="1em" height="1em" viewBox="0 0 44 51" {...props}>
       <Defs>
