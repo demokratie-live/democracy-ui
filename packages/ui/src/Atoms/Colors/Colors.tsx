@@ -1,21 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
-import { ScrollView } from "react-native";
-import { useTheme } from "styled-components/native";
+import React from 'react';
+import { ScrollView } from 'react-native';
+import { useTheme } from 'styled-components/native';
 
-import * as S from "./Colors.styled";
+import * as S from './Colors.styled';
 
 export const Colors: React.FC = () => {
   const theme = useTheme();
 
-  if (!theme) {
-    return <div>no theme</div>;
-  }
-
   const renderColorGroup = (colorGroup: any): React.ReactNodeArray => {
     return Object.keys(colorGroup).map((key) => {
       const colorItem = colorGroup[key];
-      const color = typeof colorItem === "string" ? colorItem : undefined;
+      const color = typeof colorItem === 'string' ? colorItem : undefined;
       if (color) {
         return (
           <>
@@ -27,7 +23,7 @@ export const Colors: React.FC = () => {
       }
       return [
         <S.ColorGroupContainer key={key}>
-          <S.GroupTitle>{key}</S.GroupTitle>{" "}
+          <S.GroupTitle>{key}</S.GroupTitle>
           <S.Group>{renderColorGroup(colorItem)}</S.Group>
         </S.ColorGroupContainer>,
       ];

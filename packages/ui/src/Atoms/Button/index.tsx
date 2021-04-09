@@ -1,9 +1,9 @@
-import React from "react";
-import { useTheme } from "styled-components/native";
-import { DefaultTheme } from "../../theme";
-import * as S from "./Button.styled";
+import React from 'react';
+import { useTheme } from 'styled-components/native';
+import { DefaultTheme } from '../../theme';
+import * as S from './Button.styled';
 
-type Variants = "primary" | "secondary" | "danger" | "danger-secondary";
+type Variants = 'primary' | 'secondary' | 'danger' | 'danger-secondary';
 export interface ButtonProps {
   children: string;
   variant: Variants;
@@ -29,7 +29,7 @@ const getVariant = (variant: Variants, theme: DefaultTheme) => {
         label: theme.colors.text.secondary,
       },
     },
-    "danger-secondary": {
+    'danger-secondary': {
       colors: {
         background: theme.colors.background.primary,
         label: theme.colors.text.danger,
@@ -42,7 +42,7 @@ const getVariant = (variant: Variants, theme: DefaultTheme) => {
 
 export const Button: React.FC<ButtonProps> = ({
   children,
-  variant = "primary",
+  variant = 'primary',
   ...props
 }) => {
   const theme = useTheme();

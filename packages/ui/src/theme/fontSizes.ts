@@ -1,3 +1,3 @@
 export const fontSizes = {
-  default: "14px",
+  default: '14px',
 } as const;

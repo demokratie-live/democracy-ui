@@ -1,6 +1,6 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
-export type Variant = "primary" | "secondary" | "danger" | "danger-secondary";
+export type Variant = 'primary' | 'secondary' | 'danger' | 'danger-secondary';
 
 export interface ButtonProps {
   color: string;

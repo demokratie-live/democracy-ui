@@ -1,12 +1,12 @@
-import { DefaultTheme } from "./default-theme";
-import { lightColors, darkColors } from "./colors";
-import { css } from "styled-components/native";
-import { fontSizes } from "./fontSizes";
+import { DefaultTheme } from './default-theme';
+import { lightColors, darkColors } from './colors';
+import { css } from 'styled-components/native';
+import { fontSizes } from './fontSizes';
 
 export type { DefaultTheme };
 
 export const lightTheme: DefaultTheme = {
-  name: "Light",
+  name: 'Light',
   colors: lightColors,
   textStyles: {
     button: {
@@ -19,7 +19,7 @@ export const lightTheme: DefaultTheme = {
   fontSizes,
 };
 export const darkTheme: DefaultTheme = {
-  name: "Dark",
+  name: 'Dark',
   colors: darkColors,
   textStyles: {
     button: {

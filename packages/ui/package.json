@@ -5,6 +5,12 @@
   "author": "Manuel Ruck <m.ruck@democracy-deutschland.de>",
   "homepage": "https://github.com/react-universal/library-template#readme",
   "license": "ISC",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "rollup -c",
+    "lint:es": "eslint src/",
+    "lint:ts": "tsc --noEmit"
+  },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -19,11 +25,6 @@
     "type": "git",
     "url": "git+https://github.com/react-universal/library-template.git"
   },
-  "scripts": {
-    "prepublishOnly": "npm run build",
-    "build": "rollup -c",
-    "lint:ts": "tsc --noEmit"
-  },
   "bugs": {
     "url": "https://github.com/react-universal/library-template/issues"
   },
@@ -34,6 +35,10 @@
     "@types/d3-shape": "^2.0.0",
     "d3": "^6.6.2",
     "d3-shape": "^2.1.0",
+    "eslint": "^7.23.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-native": "^3.10.0",
+    "prettier": "^2.2.1",
     "react-native-svg": "^12.1.0",
     "rollup": "^2.41.2",
     "rollup-plugin-delete": "^2.0.0",

@@ -1,7 +1,7 @@
-import React from "react";
-import * as S from "./Circle.styled";
+import React from 'react';
+import * as S from './Circle.styled';
 
-export interface CircleButtonProps extends S.CircleProps {}
+export type CircleButtonProps = S.CircleProps;
 
 export const CircleButton: React.FC<CircleButtonProps> = ({
   color,

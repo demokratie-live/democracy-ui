@@ -1,15 +1,15 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import { Button } from "../Button";
-import { ButtonStory } from "./Button.stories";
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Button } from '../Button';
+import { ButtonStory } from './Button.stories';
 
 <Meta
   title="Atoms/Button"
   component={Button}
   argTypes={{
-    children: { type: { name: "string", required: false } },
+    children: { type: { name: 'string', required: false } },
     variant: {
-      options: ["primary", "secondary", "danger", "danger-secondary"],
-      control: { type: "select" },
+      options: ['primary', 'secondary', 'danger', 'danger-secondary'],
+      control: { type: 'select' },
     },
   }}
 />
@@ -20,8 +20,8 @@ import { ButtonStory } from "./Button.stories";
   <Story
     name="Primary"
     args={{
-      children: "Primary",
-      variant: "primary",
+      children: 'Primary',
+      variant: 'primary',
     }}
   >
     {ButtonStory.bind({})}
@@ -32,8 +32,8 @@ import { ButtonStory } from "./Button.stories";
   <Story
     name="Secondary"
     args={{
-      children: "Secondary",
-      variant: "secondary",
+      children: 'Secondary',
+      variant: 'secondary',
     }}
   >
     {ButtonStory.bind({})}
@@ -44,8 +44,8 @@ import { ButtonStory } from "./Button.stories";
   <Story
     name="Danger"
     args={{
-      children: "Danger",
-      variant: "danger",
+      children: 'Danger',
+      variant: 'danger',
     }}
   >
     {ButtonStory.bind({})}
@@ -56,8 +56,8 @@ import { ButtonStory } from "./Button.stories";
   <Story
     name="Danger Secondary"
     args={{
-      children: "Danger Secondary",
-      variant: "danger-secondary",
+      children: 'Danger Secondary',
+      variant: 'danger-secondary',
     }}
   >
     {ButtonStory.bind({})}

@@ -1,7 +1,7 @@
-import React from "react";
-import * as S from "./VoteButton.styled";
+import React from 'react';
+import * as S from './VoteButton.styled';
 
-export interface VoteButtonButtonProps extends S.VoteButtonProps {}
+export type VoteButtonButtonProps = S.VoteButtonProps;
 
 export const VoteButtonButton: React.FC<VoteButtonButtonProps> = ({
   color,

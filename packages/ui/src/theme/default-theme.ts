@@ -1,6 +1,6 @@
-import { Colors } from "./colors";
-import { FlattenSimpleInterpolation } from "styled-components";
-import { fontSizes } from "./fontSizes";
+import { Colors } from './colors';
+import { FlattenSimpleInterpolation } from 'styled-components';
+import { fontSizes } from './fontSizes';
 
 export interface DefaultTheme {
   name: string;
