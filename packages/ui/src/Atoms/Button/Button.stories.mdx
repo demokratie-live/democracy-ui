@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Button } from "../Button";
+import { ButtonStory } from "./Button.stories";
 
 <Meta
   title="Atoms/Button"
@@ -18,13 +19,12 @@ import { Button } from "../Button";
 <Canvas>
   <Story
     name="Primary"
-    component={Button}
     args={{
       children: "Primary",
       variant: "primary",
     }}
   >
-    {Button.bind({})}
+    {ButtonStory.bind({})}
   </Story>
 </Canvas>
 
