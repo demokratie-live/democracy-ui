@@ -7,4 +7,4 @@ export * from "./theme";
 /** Atoms */
 export * from "./Atoms/ListItem/VotesIndex";
 export * from "./Atoms/PieChart";
-export * from "./Atoms/Button/Circle";
+export * from "./Atoms/Button/VoteButton";
