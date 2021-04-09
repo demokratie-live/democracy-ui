@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { ThumbUp as ThumbUpCmp } from '../../Icons/icons/ThumbUp';
+import { ThumbUpIcon as ThumbUpCmp } from '../../Icons/icons/ThumbUp';
 import { CircleButton as CircleButtonCmp } from '../Circle';
 
 export const CircleButton = styled(CircleButtonCmp)`
