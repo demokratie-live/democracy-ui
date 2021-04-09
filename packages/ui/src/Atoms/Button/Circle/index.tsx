@@ -7,4 +7,9 @@ export const CircleButton: React.FC<CircleButtonProps> = ({
   color,
   size,
   children,
-}) => <S.Circle {...{ color, size }}>{children}</S.Circle>;
+  ...props
+}) => (
+  <S.Circle {...props} {...{ color, size }}>
+    {children}
+  </S.Circle>
+);

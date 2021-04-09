@@ -1,24 +1,25 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import { VoteButtonButton } from ".";
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { VoteButton } from '.';
+import { VoteButtonStory } from './VoteButton.stories';
 
-<Meta title="Atoms/Button/VoteButton" component={VoteButtonButton} />
+<Meta title="Atoms/Button/VoteButton" component={VoteButton} />
 
 # Welcome to Storybook Atoms
 
 <Canvas>
-  <Story name="Yes" args={{ size: 88, color: "green" }}>
-    {VoteButtonButton.bind({})}
+  <Story name="Yes" args={{ decision: 'YES' }}>
+    {VoteButtonStory.bind({})}
   </Story>
 </Canvas>
 
 <Canvas>
-  <Story name="Abstination" args={{ size: 88, color: "blue" }}>
-    {VoteButtonButton.bind({})}
+  <Story name="Abstination" args={{ decision: 'ABSTINATION' }}>
+    {VoteButtonStory.bind({})}
   </Story>
 </Canvas>
 
 <Canvas>
-  <Story name="No" args={{ size: 88, color: "red" }}>
-    {VoteButtonButton.bind({})}
+  <Story name="No" args={{ decision: 'NO' }}>
+    {VoteButtonStory.bind({})}
   </Story>
 </Canvas>

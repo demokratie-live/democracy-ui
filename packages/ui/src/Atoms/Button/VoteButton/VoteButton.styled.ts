@@ -1,17 +1,17 @@
 import styled from 'styled-components/native';
+import { ThumbUp as ThumbUpCmp } from '../../Icons/icons/ThumbUp';
+import { CircleButton as CircleButtonCmp } from '../Circle';
 
+export const CircleButton = styled(CircleButtonCmp)`
+  justify-content: center;
+  align-items: center;
+`;
 export interface VoteButtonProps {
   size: number;
   color: string;
 }
 
-export const VoteButton = styled.TouchableOpacity<VoteButtonProps>`
-  width: ${({ size }) => `${size}px`};
-  height: ${({ size }) => `${size}px`};
-
-  border-color: ${({ color }) => `${color}CC`};
-  border-radius: ${({ size }) => `${size / 2}px`}; // TODO Try 50%
-  align-items: center;
-  justify-content: center;
-  background-color: ${({ color }) => color};
-`;
+export const ThumbUp = styled(ThumbUpCmp).attrs({
+  width: 60,
+  height: 60,
+})``;
