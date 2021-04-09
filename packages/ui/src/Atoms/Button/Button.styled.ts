@@ -1,9 +1,9 @@
-import styled, { css } from "styled-components/native";
+import styled from "styled-components/native";
 
 export type Variant = "primary" | "secondary" | "danger" | "danger-secondary";
 
 export interface ButtonProps {
-  variant: Variant;
+  color: string;
 }
 
 export const Button = styled.TouchableOpacity<ButtonProps>`
@@ -12,32 +12,8 @@ export const Button = styled.TouchableOpacity<ButtonProps>`
 
   align-items: center;
   justify-content: center;
-  ${({ theme, variant }) => {
-    switch (variant) {
-      case "secondary":
-        return css`
-          border-color: ${theme.colors.background.primary}CC;
-          background-color: ${theme.colors.background.primary};
-        `;
-      case "danger":
-        return css`
-          border-color: ${theme.colors.text.danger}CC;
-          background-color: ${theme.colors.text.danger};
-        `;
-      case "danger-secondary":
-        return css`
-          border-color: ${theme.colors.background.primary}CC;
-          background-color: ${theme.colors.background.primary};
-        `;
-
-      case "primary":
-      default:
-        return css`
-          border-color: ${theme.colors.primary}CC;
-          background-color: ${theme.colors.primary};
-        `;
-    }
-  }}
+  border-color: ${({ color }) => `${color}CC`};
+  background-color: ${({ color }) => `${color}`};
 `;
 
 export const Label = styled.Text<ButtonProps>`
@@ -46,26 +22,5 @@ export const Label = styled.Text<ButtonProps>`
   font-weight: 500;
   letter-spacing: 1px;
 
-  ${({ theme, variant }) => {
-    switch (variant) {
-      case "secondary":
-        return css`
-          color: ${theme.colors.text.colored};
-        `;
-      case "danger":
-        return css`
-          color: ${theme.colors.text.secondary};
-        `;
-      case "danger-secondary":
-        return css`
-          color: ${theme.colors.text.danger};
-        `;
-
-      case "primary":
-      default:
-        return css`
-          color: ${theme.colors.text.secondary};
-        `;
-    }
-  }}
+  color: ${({ color }) => `${color}`};
 `;
