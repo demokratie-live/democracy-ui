@@ -28,10 +28,7 @@ export const VoteButton: React.FC<VoteButtonProps> = ({ decision }) => {
 
   return (
     <S.CircleButton size={88} color={backgroundColor}>
-      <S.ThumbUp
-        color={theme.colors.text.secondary}
-        transform={`rotate(${rotation})`}
-      />
+      <S.ThumbUp color={theme.colors.text.secondary} rotation={rotation} />
     </S.CircleButton>
   );
 };

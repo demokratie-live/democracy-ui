@@ -12,6 +12,8 @@ export interface VoteButtonProps {
 }
 
 export const ThumbUp = styled(ThumbUpCmp).attrs({
-  width: 60,
-  height: 60,
-})``;
+  width: 45,
+  height: 45,
+})<{ rotation: number }>`
+  transform: ${({ rotation }) => `rotate(${String(rotation)}deg)`};
+`;
