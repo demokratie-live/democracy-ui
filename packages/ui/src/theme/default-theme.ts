@@ -1,6 +1,7 @@
 import { Colors } from './colors';
 import { FlattenSimpleInterpolation } from 'styled-components';
 import { fontSizes } from './fontSizes';
+import { spaces } from './spaces';
 
 export interface DefaultTheme {
   name: string;
@@ -11,4 +12,5 @@ export interface DefaultTheme {
     };
   };
   fontSizes: typeof fontSizes;
+  spaces: typeof spaces;
 }

@@ -1,3 +1,8 @@
+interface PartyColor {
+  background: string;
+  text: string;
+}
+
 export interface Colors {
   primary: string;
   secondary: string;
@@ -43,13 +48,13 @@ export interface Colors {
     };
   };
   party: {
-    Union: string;
-    SPD: string;
-    AfD: string;
-    FDP: string;
-    Grüne: string;
-    Linke: string;
-    ohne: string;
+    Union: PartyColor;
+    SPD: PartyColor;
+    AfD: PartyColor;
+    FDP: PartyColor;
+    Grüne: PartyColor;
+    Linke: PartyColor;
+    ohne: PartyColor;
   };
 }
 
@@ -98,13 +103,34 @@ export const lightColors: Colors = {
     },
   },
   party: {
-    Union: '#32302E',
-    SPD: '#E3000F',
-    AfD: '#009EE0',
-    FDP: '#FFED00',
-    Grüne: '#46962B',
-    Linke: '#CE2C55',
-    ohne: '#AAAAAA',
+    Union: {
+      background: '#32302e',
+      text: '#dad9d4',
+    },
+    SPD: {
+      background: '#E3000F',
+      text: '#fff',
+    },
+    AfD: {
+      background: '#009ee0',
+      text: '#fff',
+    },
+    FDP: {
+      background: '#ffed00',
+      text: '#e5007d',
+    },
+    Linke: {
+      background: '#CE2C55',
+      text: '#fff',
+    },
+    Grüne: {
+      background: '#46962b',
+      text: '#fff',
+    },
+    ohne: {
+      background: '#aaa',
+      text: 'white',
+    },
   },
 };
 
@@ -153,12 +179,33 @@ export const darkColors: Colors = {
     },
   },
   party: {
-    Union: '#32302E',
-    SPD: '#E3000F',
-    AfD: '#009EE0',
-    FDP: '#FFED00',
-    Grüne: '#46962B',
-    Linke: '#CE2C55',
-    ohne: '#AAAAAA',
+    Union: {
+      background: '#32302e',
+      text: '#dad9d4',
+    },
+    SPD: {
+      background: '#E3000F',
+      text: '#fff',
+    },
+    AfD: {
+      background: '#009ee0',
+      text: '#fff',
+    },
+    FDP: {
+      background: '#ffed00',
+      text: '#e5007d',
+    },
+    Linke: {
+      background: '#CE2C55',
+      text: '#fff',
+    },
+    Grüne: {
+      background: '#46962b',
+      text: '#fff',
+    },
+    ohne: {
+      background: '#aaa',
+      text: 'white',
+    },
   },
 };

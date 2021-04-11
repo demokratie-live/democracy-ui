@@ -2,6 +2,7 @@ import { DefaultTheme } from './default-theme';
 import { lightColors, darkColors } from './colors';
 import { css } from 'styled-components/native';
 import { fontSizes } from './fontSizes';
+import { spaces } from './spaces';
 
 export type { DefaultTheme };
 
@@ -17,6 +18,7 @@ export const lightTheme: DefaultTheme = {
     },
   },
   fontSizes,
+  spaces,
 };
 export const darkTheme: DefaultTheme = {
   name: 'Dark',
@@ -30,4 +32,5 @@ export const darkTheme: DefaultTheme = {
     },
   },
   fontSizes,
+  spaces,
 };
