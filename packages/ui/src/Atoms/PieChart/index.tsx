@@ -12,7 +12,7 @@ export interface ChartEntry {
   highlight?: boolean;
 }
 
-interface Props {
+export interface PieChartProps {
   size: number;
   data: ChartEntry[];
 }
@@ -22,8 +22,10 @@ const Svg = styled(SvgCmp)`
   align-self: stretch;
 `;
 
-export const PieChart: React.FC<Props> = ({ size, data }) => {
-  const pieObj = pie<ChartEntry>().value((d) => d.value);
+export const PieChart: React.FC<PieChartProps> = ({ size, data }) => {
+  const pieObj = pie<ChartEntry>()
+    .value((d) => d.value)
+    .sort(null);
 
   const arcs = pieObj(data);
 

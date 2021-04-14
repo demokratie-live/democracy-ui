@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { VoteDate } from '.';
+import { randomDate } from '../../utils/randomDate';
+
+<Meta
+  title="Atoms/VoteDate"
+  component={VoteDate}
+  argTypes={{
+    date: {
+      control: { type: 'date' },
+    },
+    dateEnd: {
+      control: { type: 'date' },
+    },
+  }}
+/>
+
+# Welcome to Storybook Atoms
+
+<Canvas>
+  <Story name="VoteDate" args={{ date: randomDate() }}>
+    {VoteDate.bind({})}
+  </Story>
+</Canvas>
