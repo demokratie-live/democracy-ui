@@ -6,7 +6,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token 35611aa5e002"
+    "chromatic": "npx chromatic --project-token 35611aa5e002 --exit-zero-on-changes"
   },
   "dependencies": {
     "@react-theming/storybook-addon": "^1.1.1",
