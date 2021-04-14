@@ -1,12 +1,18 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import { VotesIndex } from ".";
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { VotesIndex } from '.';
 
 <Meta title="Atoms/VotesIndex" component={VotesIndex} />
 
 # Welcome to Storybook Atoms
 
 <Canvas>
-  <Story name="VotesIndex" args={{ voted: true, votes: 1238 }}>
+  <Story name="voted" args={{ voted: true, votes: 1238 }}>
+    {VotesIndex.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="not voted" args={{ voted: false, votes: 1238 }}>
     {VotesIndex.bind({})}
   </Story>
 </Canvas>
