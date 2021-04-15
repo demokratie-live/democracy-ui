@@ -2,7 +2,6 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { ProcedureListItem } from '../ProcedureListItem';
 import { ProcedureListItemStory } from './ProcedureListItem.stories';
 import { lightData } from '../../Atoms/PieChart/data';
-import { randomDate } from '../../utils/randomDate';
 
 <Meta title="Molecules/ProcedureListItem" component={ProcedureListItem} />
 
@@ -15,23 +14,17 @@ import { randomDate } from '../../utils/randomDate';
       title:
         'Forschung zu Kernreaktoren der IV. Generation vorantreiben - Energieversorgung in Deutschland sichern',
       subtitle: 'Energieversorgung in Deutschland sichern',
-      voted: Math.random() < 0.5,
-      votes: Math.floor(Math.random() * (1e5 - 0 + 1)) + 0,
-      date: randomDate(),
-      communityChart:
-        Math.random() < 0.9
-          ? {
-              size: 20,
-              data: lightData,
-            }
-          : undefined,
-      governmentChart:
-        Math.random() < 0.5
-          ? {
-              size: 20,
-              data: lightData,
-            }
-          : undefined,
+      voted: true,
+      votes: 22736,
+      date: new Date('2021-04-15'),
+      communityChart: {
+        size: 20,
+        data: lightData,
+      },
+      governmentChart: {
+        size: 20,
+        data: lightData,
+      },
     }}
   >
     {ProcedureListItem.bind({})}
