@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTheme } from 'styled-components/native';
 import { PieChart } from '../../Atoms/PieChart';
-import { randomDate } from '../../utils/randomDate';
 
 import { ProcedureListItemProps, ProcedureListItem } from './ProcedureListItem';
 
@@ -13,36 +12,35 @@ export const ProcedureListItemStory: React.FC<ProcedureListItemProps> = ({
 
   const decisions = ['YES', 'ABSTINATION', 'NO'];
 
-  const highlighted = decisions[Math.floor(Math.random() * decisions.length)];
+  const highlighted = decisions[0];
 
   return (
     <ProcedureListItem
       {...props}
       title="Forschung zu Kernreaktoren der IV. Generation vorantreiben - Energieversorgung in Deutschland sichern"
       subtitle="Energieversorgung in Deutschland sichern"
-      voted={Math.random() < 0.5}
-      votes={Math.floor(Math.random() * (1e5 - 0 + 1)) + 0}
-      date={randomDate()}
-      // dateEnd={randomDate()}
+      voted={true}
+      votes={27164}
+      date={new Date('2021-04-15')}
       communityChart={
         <PieChart
           data={[
             {
               name: 'YES',
               color: theme.colors.vote.community.yes,
-              value: Math.random(),
+              value: 7,
               highlight: highlighted === 'YES',
             },
             {
               name: 'ABSTINATION',
               color: theme.colors.vote.community.abstination,
-              value: Math.random(),
+              value: 1,
               highlight: highlighted === 'ABSTINATION',
             },
             {
               name: 'NO',
               color: theme.colors.vote.community.no,
-              value: Math.random(),
+              value: 2,
               highlight: highlighted === 'NO',
             },
           ]}
@@ -55,19 +53,19 @@ export const ProcedureListItemStory: React.FC<ProcedureListItemProps> = ({
             {
               name: 'YES',
               color: theme.colors.vote.government.yes,
-              value: Math.random(),
+              value: 3,
               highlight: true,
             },
             {
               name: 'ABSTINATION',
               color: theme.colors.vote.government.abstination,
-              value: Math.random(),
+              value: 1,
               highlight: true,
             },
             {
               name: 'NO',
               color: theme.colors.vote.government.no,
-              value: Math.random(),
+              value: 6,
               highlight: true,
             },
           ]}
