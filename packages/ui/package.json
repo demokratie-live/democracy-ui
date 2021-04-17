@@ -1,12 +1,12 @@
 {
-  "name": "@democracy-deutschland/ui-test",
-  "version": "0.0.1-alpha.9",
-  "description": "> TODO: description",
+  "name": "@democracy-deutschland/ui",
+  "version": "0.0.3-alpha.6",
+  "description": "UI Components for DEMOCRACY App",
   "author": "Manuel Ruck <m.ruck@democracy-deutschland.de>",
   "homepage": "https://github.com/react-universal/library-template#readme",
   "license": "ISC",
   "scripts": {
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "yarn && npm run build",
     "build": "rollup -c",
     "lint:es": "eslint src/",
     "lint:ts": "tsc --noEmit"
@@ -39,19 +39,21 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-native": "^3.10.0",
     "prettier": "^2.2.1",
-    "react-native-svg": "^12.1.0",
+    "react-native-svg": "^12.1.1",
     "rollup": "^2.41.2",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.30.0",
-    "typescript": "^4.2.4"
+    "styled-components": "^5.2.3",
+    "typescript": "^4.2.4",
+    "typescript-plugin-styled-components": "^1.5.0"
   },
   "peerDependencies": {
     "d3": "*",
     "d3-shape": "*",
     "react-native": "*",
-    "react-native-svg": "*",
-    "styled-components": "*"
+    "react-native-svg": ">12",
+    "styled-components": ">5"
   },
   "dependencies": {}
 }

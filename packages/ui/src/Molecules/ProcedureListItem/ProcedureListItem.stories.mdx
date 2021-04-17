@@ -1,9 +1,24 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { ProcedureListItem } from '../ProcedureListItem';
 import { ProcedureListItemStory } from './ProcedureListItem.stories';
 import { lightData } from '../../Atoms/PieChart/data';
+import { VotesIndex } from '../../Atoms/ListItem/VotesIndex';
+import { VoteDate } from '../../Atoms/VoteDate';
+import { CommunityChart } from './components/CommunityChart';
+import { GovernmentChart } from './components/GovernmentChart';
+import { PieChart } from '../../Atoms/PieChart';
 
-<Meta title="Molecules/ProcedureListItem" component={ProcedureListItem} />
+<Meta
+  title="Molecules/ProcedureListItem"
+  component={ProcedureListItem}
+  subcomponents={{
+    VotesIndex,
+    VoteDate,
+    CommunityChart,
+    GovernmentChart,
+    PieChart,
+  }}
+/>
 
 # Welcome to Storybook Atoms
 
@@ -47,3 +62,5 @@ import { lightData } from '../../Atoms/PieChart/data';
       communityChart={{ data: lightData. size: 20 }}
     />
 ```
+
+<ArgsTable of={ProcedureListItem} />

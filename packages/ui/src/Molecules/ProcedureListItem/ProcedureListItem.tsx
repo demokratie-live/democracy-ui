@@ -27,7 +27,7 @@ export const ProcedureListItem: React.FC<ProcedureListItemProps> = ({
   voted,
   votes,
   title,
-  isIntro,
+  isIntro = false,
   subtitle,
   date,
   dateEnd,
