@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   stories: [
     "../stories/**/*.stories.mdx",
@@ -10,15 +12,15 @@ module.exports = {
     "@react-theming/storybook-addon",
     {
       name: "@storybook/addon-essentials",
-      // options: {
-      //   backgrounds: false,
-      // },
+      options: {
+        backgrounds: false,
+      },
     },
   ],
 
   reactOptions: {
     fastRefresh: true,
-    // strictMode: true,
+    strictMode: true,
   },
 
   typescript: {
@@ -31,6 +33,11 @@ module.exports = {
       "react-native$": "react-native-web",
       "react-native-svg": "react-native-svg-web",
     };
+
+    config.resolve.alias["styled-components"] = path.resolve(
+      "node_modules",
+      "styled-components"
+    );
 
     return config;
   },
