@@ -1,6 +1,13 @@
 module.exports = {
+  root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['react', 'react-native'],
+  plugins: ['@typescript-eslint', 'react', 'react-native', 'react-hooks'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-native/all',
+    'prettier',
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -14,20 +21,14 @@ module.exports = {
     node: true,
     'react-native/react-native': true,
   },
-  extends: [
-    'plugin:react-native/all',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'plugin:prettier/recommended',
-    'prettier/react',
-    'prettier/@typescript-eslint',
-  ],
   rules: {
     'react-native/no-unused-styles': 2,
     'react-native/split-platform-components': 2,
     'react-native/no-inline-styles': 2,
     'react-native/no-color-literals': 2,
-    'react-native/no-raw-text': 2,
     'react-native/no-single-element-style-arrays': 2,
+    'react-native/no-raw-text': ['error', { skip: ['DateText'] }],
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
   },
 };
