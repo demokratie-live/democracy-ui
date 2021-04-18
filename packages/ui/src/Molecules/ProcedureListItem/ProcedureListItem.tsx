@@ -19,7 +19,6 @@ export interface ProcedureListItemProps
   isIntro?: boolean;
   title: string;
   subtitle?: string;
-  onPress?: () => void;
 }
 
 export const ProcedureListItem: React.FC<ProcedureListItemProps> = ({
@@ -32,11 +31,10 @@ export const ProcedureListItem: React.FC<ProcedureListItemProps> = ({
   subtitle,
   date,
   dateEnd,
-  onPress,
   ...props
 }) => {
   return (
-    <S.ProcedureListItem onPress={onPress} {...props}>
+    <S.ProcedureListItem {...props}>
       <S.TextContainer>
         <S.Title numberOfLines={isIntro ? undefined : 3}>{title}</S.Title>
         {!!subtitle && (
