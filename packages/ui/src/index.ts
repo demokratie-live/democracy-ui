@@ -14,3 +14,4 @@ export * from './Atoms/VoteDate';
 
 /** Molecules */
 export * from './Molecules/ProcedureListItem/ProcedureListItem';
+export * from './Molecules/CountryMap';
