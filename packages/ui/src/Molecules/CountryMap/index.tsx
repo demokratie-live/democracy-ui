@@ -1,10 +1,11 @@
-import { max, scaleLinear } from 'd3';
 import React, { useContext } from 'react';
 import { G } from 'react-native-svg';
 import styled, { ThemeContext } from 'styled-components/native';
 import { constituencySvgs } from './Constituencies';
 import { CountryMapSvg } from './CountryMapSvg';
 import { useWindowDimensions } from 'react-native';
+import { scaleLinear } from 'd3-scale';
+import { max } from 'd3-array';
 
 const Container = styled.View`
   align-items: center;
@@ -51,7 +52,10 @@ export const CountryMap: React.FC<CountryMapProps> = ({ data }) => {
               ]);
             const opacityRange = scaleLinear().domain([0, 1]).range([0.3, 1]);
             return (
-              <G opacity={opacityRange(total / (maxVotersConstituency as any))}>
+              <G
+                key={`constituency-${constituency}`}
+                opacity={opacityRange(total / (maxVotersConstituency as any))}
+              >
                 {(constituencySvgs as any)[constituency](
                   colorRange(colorValue),
                 )}

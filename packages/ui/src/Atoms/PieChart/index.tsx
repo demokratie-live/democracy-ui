@@ -1,7 +1,6 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { arc, pie } from 'd3';
-import { PieArcDatum } from 'd3-shape';
+import { arc, pie, PieArcDatum } from 'd3-shape';
 import { G, Path, Svg as SvgCmp } from 'react-native-svg';
 import styled from 'styled-components/native';
 
