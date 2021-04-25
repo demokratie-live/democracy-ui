@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ChartLegend } from '.';
+import { ChartLegendStory } from './ChartLegend.stories';
+import { lightTheme } from '../../../theme';
+
+<Meta
+  title="Molecules/Chats/Legend"
+  component={ChartLegend}
+  subcomponents={{}}
+/>
+
+# Welcome to Storybook Atoms
+
+<Canvas>
+  <Story
+    name="Legend"
+    args={{
+      data: [
+        {
+          label: 'Zustimmungen',
+          value: 10,
+          color: lightTheme.colors.vote.community.yes,
+        },
+        {
+          label: 'Enthaltungen',
+          value: 5,
+          color: lightTheme.colors.vote.community.abstination,
+        },
+        {
+          label: 'Ablehnungen',
+          value: 20,
+          color: lightTheme.colors.vote.community.no,
+        },
+      ],
+    }}
+  >
+    {ChartLegendStory.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={ChartLegend} />
