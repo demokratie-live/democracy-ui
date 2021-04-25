@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { DonutChart } from '.';
+import { DonutChartStory } from './DonutChart.stories';
+import { lightTheme } from '../../../theme';
+
+<Meta title="Molecules/Chats/Donut" component={DonutChart} subcomponents={{}} />
+
+# Welcome to Storybook Atoms
+
+<Canvas>
+  <Story
+    name="Donut"
+    args={{
+      colors: ['#16C063', '#2882E4', '#EC3E31'],
+      votesData: { yes: 1, abstination: 1, no: 1 },
+      size: 500,
+      innerTextTop: '3',
+      innerTextBottom: 'Abstimmende',
+      topLeftText: 'Bundesweit',
+    }}
+  >
+    {DonutChartStory.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={DonutChart} />
