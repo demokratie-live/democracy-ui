@@ -85,12 +85,14 @@ export const CountryMap: React.FC<CountryMapProps> = ({ data }) => {
             <G
               key={`constituency-${constituency}`}
               opacity={
-                total ? opacityRange(total / (maxVotersConstituency || 0)) : 0.1
+                total ? opacityRange(total / (maxVotersConstituency || 0)) : 0.5
               }
             >
               {(constituencySvgs as any)[constituency]({
-                fill: colorRange(colorValue),
-                stroke: theme.colors.background.secondary,
+                fill: total
+                  ? colorRange(colorValue)
+                  : theme.colors.background.secondary,
+                stroke: theme.colors.primary,
               })}
             </G>
           );
