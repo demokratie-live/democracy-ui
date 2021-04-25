@@ -14,7 +14,99 @@ import { Bar } from '../../../Atoms/Chart/Bar';
 
 <Canvas>
   <Story
-    name="BarChart"
+    name="WOM"
+    args={{
+      selectedParty: 0,
+      size: 400,
+      data: [
+        {
+          party: 'Union',
+          deviants: [
+            {
+              value: 1,
+              color: lightTheme.colors.vote.wom.match,
+            },
+            {
+              value: 2,
+              color: lightTheme.colors.vote.wom.missmatch,
+            },
+          ],
+        },
+        {
+          party: 'SPD',
+          deviants: [
+            {
+              value: 3,
+              color: lightTheme.colors.vote.wom.match,
+            },
+            {
+              value: 2,
+              color: lightTheme.colors.vote.wom.missmatch,
+            },
+          ],
+        },
+        {
+          party: 'Afd',
+          deviants: [
+            {
+              value: 9,
+              color: lightTheme.colors.vote.wom.match,
+            },
+            {
+              value: 2,
+              color: lightTheme.colors.vote.wom.missmatch,
+            },
+          ],
+        },
+        {
+          party: 'Grüne',
+          deviants: [
+            {
+              value: 1,
+              color: lightTheme.colors.vote.wom.match,
+            },
+            {
+              value: 6,
+              color: lightTheme.colors.vote.wom.missmatch,
+            },
+          ],
+        },
+        {
+          party: 'Linke',
+          deviants: [
+            {
+              value: 1,
+              color: lightTheme.colors.vote.wom.match,
+            },
+            {
+              value: 2,
+              color: lightTheme.colors.vote.wom.missmatch,
+            },
+          ],
+        },
+        {
+          party: 'FDP',
+          deviants: [
+            {
+              value: 1,
+              color: lightTheme.colors.vote.wom.match,
+            },
+            {
+              value: 12,
+              color: lightTheme.colors.vote.wom.missmatch,
+            },
+          ],
+        },
+      ],
+    }}
+  >
+    {BarChartStory.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Parties"
     args={{
       selectedParty: 0,
       size: 400,
@@ -33,6 +125,10 @@ import { Bar } from '../../../Atoms/Chart/Bar';
             {
               value: 0.5,
               color: lightTheme.colors.vote.government.no,
+            },
+            {
+              value: 0.5,
+              color: lightTheme.colors.vote.government.notVoted,
             },
           ],
         },
