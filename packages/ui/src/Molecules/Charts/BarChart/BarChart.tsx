@@ -1,6 +1,6 @@
 import { scaleBand } from 'd3-scale';
 import React, { useContext } from 'react';
-import Svg, { G, Rect, Text } from 'react-native-svg';
+import Svg, { G, Text } from 'react-native-svg';
 import { ThemeContext } from 'styled-components/native';
 import { Bar, BarData } from '../../../Atoms/Chart/Bar';
 
@@ -40,11 +40,7 @@ export const BarChart: React.FC<BarChartProps> = ({
     .padding(0.2);
 
   return (
-    <Svg
-      width={size}
-      height={size - 13}
-      // viewBox={`-${size / 2} -${size / 2} ${size} ${size}`}
-    >
+    <Svg width={size} height={size - 13}>
       <G y={margin.top + 3}>
         {data.map(({ party }, i) => (
           <Text
@@ -60,12 +56,11 @@ export const BarChart: React.FC<BarChartProps> = ({
           </Text>
         ))}
       </G>
-      {/* <G translate={[margin.left, margin.top]}> */}
       {data.map(({ party, deviants }, i) => (
         <G
           key={`bar-${party}`}
           transform={`translate(${margin.left} ${yScale(party) || 0})`}
-          rotation="50"
+          onPress={() => setSelectedParty(i)}
         >
           <Bar
             active={i === selectedParty}
@@ -73,16 +68,8 @@ export const BarChart: React.FC<BarChartProps> = ({
             width={innerWidth}
             height={yScale.bandwidth()}
           />
-          <Rect // onPress overlay
-            onPress={() => setSelectedParty(i)}
-            x={-margin.left}
-            width={size}
-            height={yScale.bandwidth()}
-            fill="transparent"
-          />
         </G>
       ))}
-      {/* </G> */}
     </Svg>
   );
 };
