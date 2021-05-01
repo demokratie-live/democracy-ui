@@ -15,6 +15,9 @@ export interface BarChartProps {
   height: number;
   setSelectedParty: (i: number) => void;
   selectedParty: number;
+  text?: {
+    space?: number;
+  };
 }
 
 export const BarChart: React.FC<BarChartProps> = ({
@@ -23,26 +26,19 @@ export const BarChart: React.FC<BarChartProps> = ({
   height,
   selectedParty,
   setSelectedParty,
+  text = { space: 50 },
 }) => {
   const theme = useContext(ThemeContext);
-  const margin = {
-    top: 11,
-    right: 11,
-    bottom: 0,
-    left: 80,
-  };
-  const innerWidth = width - margin.right - margin.left;
-  const innerHeight = height - margin.top - margin.bottom - 13;
 
   const yValue = ({ party }: { party: string }) => party;
 
   const yScale = scaleBand()
     .domain(data.map(yValue))
-    .range([0, innerHeight])
+    .range([0, height])
     .padding(0.2);
 
   return (
-    <Svg width={width} height={height - 13}>
+    <Svg width={width} height={height}>
       {data.map(({ party, deviants }, i) => (
         <G
           key={`bar-${party}`}
@@ -51,16 +47,16 @@ export const BarChart: React.FC<BarChartProps> = ({
           <Text
             opacity={i === selectedParty ? 1 : 0.5}
             key={`axis-${party}`}
-            dy="27"
+            dy={yScale.bandwidth() / 2 + 4}
             fill={theme.colors.text.primary}
           >
             {party}
           </Text>
           <Bar
-            x={50}
+            x={text.space}
             active={i === selectedParty}
             data={deviants}
-            width={innerWidth}
+            width={width}
             height={yScale.bandwidth()}
           />
           <Rect

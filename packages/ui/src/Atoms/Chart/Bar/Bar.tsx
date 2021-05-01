@@ -23,9 +23,10 @@ export const Bar: React.FC<BarProps> = ({
   active = true,
   x = 0,
 }) => {
+  const barWidth = width - x;
   const themeContext = useContext(ThemeContext);
   const total = data.reduce<number>((sum, { value }) => sum + value, 0);
-  const xScale = scaleLinear().domain([0, total]).range([0, width]);
+  const xScale = scaleLinear().domain([0, total]).range([0, barWidth]);
 
   const getPercentage = (value: number, { x }: { x?: number } = {}) => {
     const percentage = Math.round((value / total) * 100);

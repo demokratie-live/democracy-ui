@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { BarChart } from '.';
-import { BarChartStory } from './BarChart.stories';
+import { BarChartStory, BarChartFullSizeStory } from './BarChart.stories';
 import { lightTheme } from '../../../theme';
 import { Bar } from '../../../Atoms/Chart/Bar';
 
@@ -222,6 +222,125 @@ import { Bar } from '../../../Atoms/Chart/Bar';
     }}
   >
     {BarChartStory.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="stretchable"
+    args={{
+      selectedParty: 0,
+      data: [
+        {
+          party: 'Union',
+          deviants: [
+            {
+              value: 1,
+              color: lightTheme.colors.vote.government.yes,
+            },
+            {
+              value: 2,
+              color: lightTheme.colors.vote.government.abstination,
+            },
+            {
+              value: 0.5,
+              color: lightTheme.colors.vote.government.no,
+            },
+            {
+              value: 0.5,
+              color: lightTheme.colors.vote.government.notVoted,
+            },
+          ],
+        },
+        {
+          party: 'SPD',
+          deviants: [
+            {
+              value: 3,
+              color: lightTheme.colors.vote.government.yes,
+            },
+            {
+              value: 2,
+              color: lightTheme.colors.vote.government.abstination,
+            },
+            {
+              value: 0.5,
+              color: lightTheme.colors.vote.government.no,
+            },
+          ],
+        },
+        {
+          party: 'Afd',
+          deviants: [
+            {
+              value: 9,
+              color: lightTheme.colors.vote.government.yes,
+            },
+            {
+              value: 2,
+              color: lightTheme.colors.vote.government.abstination,
+            },
+            {
+              value: 0.5,
+              color: lightTheme.colors.vote.government.no,
+            },
+          ],
+        },
+        {
+          party: 'Grüne',
+          deviants: [
+            {
+              value: 1,
+              color: lightTheme.colors.vote.government.yes,
+            },
+            {
+              value: 6,
+              color: lightTheme.colors.vote.government.abstination,
+            },
+            {
+              value: 0.5,
+              color: lightTheme.colors.vote.government.no,
+            },
+          ],
+        },
+        {
+          party: 'Linke',
+          deviants: [
+            {
+              value: 1,
+              color: lightTheme.colors.vote.government.yes,
+            },
+            {
+              value: 2,
+              color: lightTheme.colors.vote.government.abstination,
+            },
+            {
+              value: 7,
+              color: lightTheme.colors.vote.government.no,
+            },
+          ],
+        },
+        {
+          party: 'FDP',
+          deviants: [
+            {
+              value: 1,
+              color: lightTheme.colors.vote.government.yes,
+            },
+            {
+              value: 12,
+              color: lightTheme.colors.vote.government.abstination,
+            },
+            {
+              value: 8,
+              color: lightTheme.colors.vote.government.no,
+            },
+          ],
+        },
+      ],
+    }}
+  >
+    {BarChartFullSizeStory.bind({})}
   </Story>
 </Canvas>
 
