@@ -27,6 +27,21 @@ module.exports = {
     check: true,
   },
 
+  babel: async (options) => ({
+    ...options,
+    plugins: [
+      ...options.plugins,
+      [
+        "rename-jsx-attribute",
+        {
+          attributes: {
+            onPress: "onClick",
+          },
+        },
+      ],
+    ],
+  }),
+
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias = {
       ...config.resolve.alias,

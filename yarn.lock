@@ -3469,6 +3469,11 @@ babel-plugin-react-docgen@^4.2.1:
     lodash "^4.17.15"
     react-docgen "^5.0.0"
 
+babel-plugin-rename-jsx-attribute@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/babel-plugin-rename-jsx-attribute/-/babel-plugin-rename-jsx-attribute-0.2.4.tgz#6441fe55ba6a1c8218b2aadd2b5c8151c02dc436"
+  integrity sha512-R3kRggMmkXAd465a2q2Y2IceIUJHoyw9q/c0I7i3JdQDHGbUj59OTOR6QjRuB/bII1yH2Xuy/KM5+NNs9NzCGw==
+
 "babel-plugin-styled-components@>= 1.12.0":
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.12.0.tgz#1dec1676512177de6b827211e9eda5a30db4f9b9"
@@ -9783,7 +9788,7 @@ react-native-codegen@^0.0.6:
 
 react-native-svg-web@^1.0.9:
   version "1.0.9"
-  resolved "https://registry.yarnpkg.com/react-native-svg-web/-/react-native-svg-web-1.0.9.tgz#a50b1ac6e33eb9efdba38d58e6e13c193ef041c2"
+  resolved "https://vbg-frontend-dev-364050630688.d.codeartifact.eu-central-1.amazonaws.com:443/npm/vbg-npm-repo/react-native-svg-web/-/react-native-svg-web-1.0.9.tgz#a50b1ac6e33eb9efdba38d58e6e13c193ef041c2"
   integrity sha512-fggz1MPx55xP92ZlFWhvxfsd8/Mj3z63E1eo1pldtBRuNbR4LffvtY9hwj96bgHZU3gRwJL00LV3GAWRFthlnA==
 
 react-native-web@^0.15.5:
