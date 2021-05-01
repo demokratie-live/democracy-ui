@@ -9788,7 +9788,7 @@ react-native-codegen@^0.0.6:
 
 react-native-svg-web@^1.0.9:
   version "1.0.9"
-  resolved "https://vbg-frontend-dev-364050630688.d.codeartifact.eu-central-1.amazonaws.com:443/npm/vbg-npm-repo/react-native-svg-web/-/react-native-svg-web-1.0.9.tgz#a50b1ac6e33eb9efdba38d58e6e13c193ef041c2"
+  resolved "https://registry.yarnpkg.com/react-native-svg-web/-/react-native-svg-web-1.0.9.tgz#a50b1ac6e33eb9efdba38d58e6e13c193ef041c2"
   integrity sha512-fggz1MPx55xP92ZlFWhvxfsd8/Mj3z63E1eo1pldtBRuNbR4LffvtY9hwj96bgHZU3gRwJL00LV3GAWRFthlnA==
 
 react-native-web@^0.15.5:
