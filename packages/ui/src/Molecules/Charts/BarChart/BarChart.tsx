@@ -1,6 +1,6 @@
 import { scaleBand } from 'd3-scale';
 import React, { useContext } from 'react';
-import Svg, { G, Text } from 'react-native-svg';
+import Svg, { G, Rect, Text } from 'react-native-svg';
 import { ThemeContext } from 'styled-components/native';
 import { Bar, BarData } from '../../../Atoms/Chart/Bar';
 
@@ -11,14 +11,16 @@ export interface WomPartyChartData {
 
 export interface BarChartProps {
   data: WomPartyChartData[];
-  size: number;
+  width: number;
+  height: number;
   setSelectedParty: (i: number) => void;
   selectedParty: number;
 }
 
 export const BarChart: React.FC<BarChartProps> = ({
   data,
-  size,
+  width,
+  height,
   selectedParty,
   setSelectedParty,
 }) => {
@@ -29,8 +31,8 @@ export const BarChart: React.FC<BarChartProps> = ({
     bottom: 0,
     left: 80,
   };
-  const innerWidth = size - margin.right - margin.left;
-  const innerHeight = size - margin.top - margin.bottom - 13;
+  const innerWidth = width - margin.right - margin.left;
+  const innerHeight = height - margin.top - margin.bottom - 13;
 
   const yValue = ({ party }: { party: string }) => party;
 
@@ -40,33 +42,33 @@ export const BarChart: React.FC<BarChartProps> = ({
     .padding(0.2);
 
   return (
-    <Svg width={size} height={size - 13}>
-      <G y={margin.top + 3}>
-        {data.map(({ party }, i) => (
+    <Svg width={width} height={height - 13}>
+      {data.map(({ party, deviants }, i) => (
+        <G
+          key={`bar-${party}`}
+          transform={`translate(0 ${yScale(party) || 0})`}
+        >
           <Text
             opacity={i === selectedParty ? 1 : 0.5}
             key={`axis-${party}`}
-            y={
-              yScale.bandwidth() +
-              ((yScale(party) || 0) - yScale.bandwidth() / 2)
-            }
+            dy="27"
             fill={theme.colors.text.primary}
           >
             {party}
           </Text>
-        ))}
-      </G>
-      {data.map(({ party, deviants }, i) => (
-        <G
-          key={`bar-${party}`}
-          transform={`translate(${margin.left} ${yScale(party) || 0})`}
-          onPress={() => setSelectedParty(i)}
-        >
           <Bar
+            x={50}
             active={i === selectedParty}
             data={deviants}
             width={innerWidth}
             height={yScale.bandwidth()}
+          />
+          <Rect
+            width="100%"
+            height="100%"
+            fill="transparent"
+            opacity={0}
+            onPress={() => setSelectedParty(i)}
           />
         </G>
       ))}

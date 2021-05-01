@@ -13,6 +13,7 @@ export interface BarProps {
   width: number;
   height: number;
   active?: boolean;
+  x?: number;
 }
 
 export const Bar: React.FC<BarProps> = ({
@@ -20,6 +21,7 @@ export const Bar: React.FC<BarProps> = ({
   width,
   height,
   active = true,
+  x = 0,
 }) => {
   const themeContext = useContext(ThemeContext);
   const total = data.reduce<number>((sum, { value }) => sum + value, 0);
@@ -40,13 +42,12 @@ export const Bar: React.FC<BarProps> = ({
       >{`${percentage}%`}</Text>
     );
   };
-  let x = 0;
   return (
     <G opacity={active ? 1 : 0.5}>
       {data.map(({ value, color }) => {
         x = x + xScale(value);
         return (
-          <G transform={`translate(${-xScale(value) + x} 0)`}>
+          <G key={color} transform={`translate(${-xScale(value) + x} 0)`}>
             <Rect width={xScale(value)} height={height} fill={color} />
             {getPercentage(value)}
           </G>
