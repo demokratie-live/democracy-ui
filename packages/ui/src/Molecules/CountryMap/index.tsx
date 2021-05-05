@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { G } from 'react-native-svg';
-import styled, { ThemeContext } from 'styled-components/native';
+import styled from 'styled-components/native';
 import { constituencySvgs } from './Constituencies';
 import { CountryMapSvg } from './CountryMapSvg';
-import { useWindowDimensions } from 'react-native';
 import { scaleLinear } from 'd3-scale';
 import { max } from 'd3-array';
+import { useTheme } from 'styled-components/native';
 
 const Container = styled.View`
   align-items: center;
@@ -13,6 +13,7 @@ const Container = styled.View`
 `;
 
 export interface CountryMapProps {
+  width: number;
   data: {
     procedure: {
       procedureId: string;
@@ -30,10 +31,8 @@ export interface CountryMapProps {
   };
 }
 
-export const CountryMap: React.FC<CountryMapProps> = ({ data }) => {
-  const { width } = useWindowDimensions();
-
-  const theme = useContext(ThemeContext);
+export const CountryMap: React.FC<CountryMapProps> = ({ data, width }) => {
+  const theme = useTheme();
   if (!data?.procedure.communityVotes) {
     return null;
   }

@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Svg, { Path } from 'react-native-svg';
-import { ThemeContext } from 'styled-components/native';
+import { useTheme } from 'styled-components/native';
 
 interface Props {
   width: number;
 }
 
 export const CountryMapSvg: React.FC<Props> = ({ children, width }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useTheme();
   return (
     <Svg width={width} height={width * 1.3392857143} viewBox="0 0 560 750">
       {children}
