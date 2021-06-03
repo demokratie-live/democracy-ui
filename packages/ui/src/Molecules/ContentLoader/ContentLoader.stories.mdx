@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { ListItemContentLoader } from '.';
+import {
+  ContentLoaderStory,
+  ContentLoaderListStory,
+} from './ContentLoader.stories';
+
+<Meta
+  title="Molecules/ContentLoader"
+  component={ListItemContentLoader}
+  subcomponents={{}}
+/>
+
+# Welcome to Storybook Atoms
+
+<Canvas>
+  <Story name="single" args={{}}>
+    {ContentLoaderStory.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="list" args={{}}>
+    {ContentLoaderListStory.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={ListItemContentLoader} />
