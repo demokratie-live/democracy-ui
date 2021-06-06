@@ -16,7 +16,8 @@ export * from './Atoms/PartyLogo';
 export * from './Atoms/ProfileImage';
 
 /** Molecules */
-export * from './Molecules/ProcedureListItem/ProcedureListItem';
+export * from './Molecules/Avatar';
+export * from './Molecules/ProcedureListItem';
 export * from './Molecules/CountryMap';
 export * from './Molecules/Charts/Legend';
 export * from './Molecules/Charts/Donut';
