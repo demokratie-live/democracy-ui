@@ -1,8 +1,11 @@
 import React from 'react';
 import { Party, PartyProps } from './old';
 
-export type PartyLogoProps = PartyProps;
+export interface PartyLogoProps extends PartyProps {
+  width: number;
+}
 
-export const PartyLogo: React.FC<PartyLogoProps> = ({ ...props }) => (
-  <Party {...props} />
-);
+export const PartyLogo: React.FC<PartyLogoProps> = ({
+  width = 150,
+  ...props
+}) => <Party width={width} {...props} />;

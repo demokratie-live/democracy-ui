@@ -4,7 +4,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import del from 'rollup-plugin-delete';
 import createStyledComponentsTransformer from 'typescript-plugin-styled-components';
+import images from 'rollup-plugin-image-files';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const packageJson = require('./package.json');
 const styledComponentsTransformer = createStyledComponentsTransformer();
 
@@ -39,5 +41,6 @@ export default {
         }),
       ],
     }),
+    images(),
   ],
 };
