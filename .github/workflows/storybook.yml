@@ -2,9 +2,8 @@ name: Storybook
 
 on:
   push:
-    # branches:
-    #   - master
-    # paths: ["src/packates/ui/**"]
+    branches:
+      - master
 
 jobs:
   build-and-deploy-storybook:
