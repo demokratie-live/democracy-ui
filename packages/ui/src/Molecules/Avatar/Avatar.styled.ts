@@ -7,9 +7,7 @@ interface AvatarProps {
 }
 
 export const Avatar = styled.View<AvatarProps>`
-  max-width: ${({ width }) => width + 2 * (width * 0.05)}px;
-  padding-left: 5%;
-  padding-right: 5%;
+  max-width: ${({ width }) => width}px;
 `;
 
 interface PartyLogoProps {
