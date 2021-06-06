@@ -1,9 +1,11 @@
 name: Storybook
+
 on:
   push:
     # branches:
     #   - master
-    paths: ["src/packates/ui/**"]
+    # paths: ["src/packates/ui/**"]
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
