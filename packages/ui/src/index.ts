@@ -12,6 +12,7 @@ export * from './Atoms/Icons';
 export * from './Atoms/ListItem/VotesIndex';
 export * from './Atoms/PieChart';
 export * from './Atoms/VoteDate';
+export * from './Atoms/PartyLogo';
 export * from './Atoms/ProfileImage';
 
 /** Molecules */
