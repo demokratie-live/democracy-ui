@@ -1,1 +1,1 @@
-export * from './icons/ThumbUp';
+export * from './icon/ThumbUp';
