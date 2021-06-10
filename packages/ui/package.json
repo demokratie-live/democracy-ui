@@ -13,7 +13,8 @@
     "build": "rollup -c",
     "lint": "yarn lint:ts && yarn lint:es",
     "lint:es": "eslint src/",
-    "lint:ts": "tsc --noEmit"
+    "lint:ts": "tsc --noEmit",
+    "gen:icons": "npx @svgr/cli --icon --replace-attr-values '#030303={props.color}' --native --typescript -d src/Atoms/Icons/icon src/Atoms/Icons/svg"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
+    "@svgr/cli": "^5.5.0",
     "@types/d3": "^6.3.0",
     "@types/d3-shape": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
