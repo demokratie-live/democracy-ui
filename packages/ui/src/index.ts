@@ -23,3 +23,4 @@ export * from './Molecules/Charts/Legend';
 export * from './Molecules/Charts/Donut';
 export * from './Molecules/Charts/BarChart';
 export * from './Molecules/ContentLoader';
+export * from './Molecules/DeputyListItem';
