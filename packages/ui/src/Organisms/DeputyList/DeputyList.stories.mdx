@@ -1,0 +1,162 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { DeputyList } from '.';
+import { DeputyListStory } from './DeputyList.stories';
+import { action } from '@storybook/addon-actions';
+
+<Meta title="Organisms/DeputyList" component={DeputyList} subcomponents={{}} />
+
+# Welcome to Storybook Atoms
+
+<Canvas>
+  <Story
+    name="default"
+    args={{
+      deputies: [
+        {
+          id: '1',
+          onPress: action('onPress'),
+          title: 'Opermann, Thomas',
+          subtitle: 'SPD, Wahlkreis 53',
+          avatar: {
+            profileImage: {
+              source: {
+                uri:
+                  'https://www.bundestag.de/resource/image/518108/3x4/284/379/5a9d5a921e68d5ad3082f6351429a471/bc/bahr_ulrike_gross.jpg',
+              },
+              height: 200,
+              variant: 'oval',
+            },
+            partyLogo: {
+              party: 'SPD',
+              width: 200,
+            },
+          },
+        },
+        {
+          id: '2',
+          onPress: action('onPress'),
+          title: 'Opermann, Thomas',
+          subtitle: 'SPD, Wahlkreis 53',
+          avatar: {
+            profileImage: {
+              source: {
+                uri:
+                  'https://www.bundestag.de/resource/image/518108/3x4/284/379/5a9d5a921e68d5ad3082f6351429a471/bc/bahr_ulrike_gross.jpg',
+              },
+              height: 200,
+              variant: 'oval',
+            },
+            partyLogo: {
+              party: 'SPD',
+              width: 200,
+            },
+          },
+        },
+        {
+          id: '3',
+          onPress: action('onPress'),
+          title: 'Opermann, Thomas',
+          subtitle: 'SPD, Wahlkreis 53',
+          avatar: {
+            profileImage: {
+              source: {
+                uri:
+                  'https://www.bundestag.de/resource/image/518108/3x4/284/379/5a9d5a921e68d5ad3082f6351429a471/bc/bahr_ulrike_gross.jpg',
+              },
+              height: 200,
+              variant: 'oval',
+            },
+            partyLogo: {
+              party: 'SPD',
+              width: 200,
+            },
+          },
+        },
+        {
+          id: '4',
+          onPress: action('onPress'),
+          title: 'Opermann, Thomas',
+          subtitle: 'SPD, Wahlkreis 53',
+          avatar: {
+            profileImage: {
+              source: {
+                uri:
+                  'https://www.bundestag.de/resource/image/518108/3x4/284/379/5a9d5a921e68d5ad3082f6351429a471/bc/bahr_ulrike_gross.jpg',
+              },
+              height: 200,
+              variant: 'oval',
+            },
+            partyLogo: {
+              party: 'SPD',
+              width: 200,
+            },
+          },
+        },
+        {
+          id: '5',
+          onPress: action('onPress'),
+          title: 'Opermann, Thomas',
+          subtitle: 'SPD, Wahlkreis 53',
+          avatar: {
+            profileImage: {
+              source: {
+                uri:
+                  'https://www.bundestag.de/resource/image/518108/3x4/284/379/5a9d5a921e68d5ad3082f6351429a471/bc/bahr_ulrike_gross.jpg',
+              },
+              height: 200,
+              variant: 'oval',
+            },
+            partyLogo: {
+              party: 'SPD',
+              width: 200,
+            },
+          },
+        },
+        {
+          id: '6',
+          onPress: action('onPress'),
+          title: 'Opermann, Thomas',
+          subtitle: 'SPD, Wahlkreis 53',
+          avatar: {
+            profileImage: {
+              source: {
+                uri:
+                  'https://www.bundestag.de/resource/image/518108/3x4/284/379/5a9d5a921e68d5ad3082f6351429a471/bc/bahr_ulrike_gross.jpg',
+              },
+              height: 200,
+              variant: 'oval',
+            },
+            partyLogo: {
+              party: 'SPD',
+              width: 200,
+            },
+          },
+        },
+        {
+          id: '7',
+          onPress: action('onPress'),
+          title: 'Opermann, Thomas',
+          subtitle: 'SPD, Wahlkreis 53',
+          avatar: {
+            profileImage: {
+              source: {
+                uri:
+                  'https://www.bundestag.de/resource/image/518108/3x4/284/379/5a9d5a921e68d5ad3082f6351429a471/bc/bahr_ulrike_gross.jpg',
+              },
+              height: 200,
+              variant: 'oval',
+            },
+            partyLogo: {
+              party: 'SPD',
+              width: 200,
+            },
+          },
+        },
+      ],
+    }}
+  >
+    {DeputyList.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={DeputyList} />
