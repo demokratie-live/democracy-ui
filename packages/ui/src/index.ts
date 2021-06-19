@@ -6,6 +6,7 @@ export { ThemeProvider };
 
 /** Atoms */
 export * from './Atoms/Button';
+export * from './Atoms/Button/StateButton';
 export * from './Atoms/Button/VoteButton';
 export * from './Atoms/Chart/Bar';
 export * from './Atoms/Icons';
