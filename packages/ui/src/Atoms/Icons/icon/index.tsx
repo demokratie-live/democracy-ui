@@ -1,3 +1,4 @@
+export { default as Avatar } from './Avatar';
 export { default as Checkmark } from './Checkmark';
 export { default as Forward } from './Forward';
 export { default as Lens } from './Lens';

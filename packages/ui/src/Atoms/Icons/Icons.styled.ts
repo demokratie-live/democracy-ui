@@ -14,5 +14,5 @@ export const IconContainer = styled.View`
 
 export const Text = styled.Text`
   margin-top: 10px;
-  color: ${({ theme }) => theme.colors.text.primary};
+  color: ${({ theme }) => theme.colors.text.secondary};
 `;
