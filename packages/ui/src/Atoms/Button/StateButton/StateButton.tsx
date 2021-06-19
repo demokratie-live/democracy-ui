@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from 'styled-components/native';
-import { Checkmark, Plus, Minus } from '../../Icons';
+import { CheckmarkIcon, PlusIcon, MinusIcon } from '../../Icons';
 import * as S from './StateButton.styled';
 
 export type STATE = 'Add' | 'Remove' | 'Checked';
@@ -12,22 +12,22 @@ export interface StateButtonProps {
 export const StateButton: React.FC<StateButtonProps> = ({ state }) => {
   const theme = useTheme();
 
-  let IconCmp: typeof Checkmark | typeof Plus | typeof Minus;
+  let IconCmp: typeof CheckmarkIcon | typeof PlusIcon | typeof MinusIcon;
   let color: string;
 
   switch (state) {
     case 'Add':
-      IconCmp = Plus;
+      IconCmp = PlusIcon;
       color = theme.colors.vote.community.yes;
       break;
     case 'Remove':
-      IconCmp = Minus;
+      IconCmp = MinusIcon;
       color = theme.colors.vote.community.no;
       break;
 
     default:
       // Checked
-      IconCmp = Checkmark;
+      IconCmp = CheckmarkIcon;
       color = theme.colors.primary;
       break;
   }

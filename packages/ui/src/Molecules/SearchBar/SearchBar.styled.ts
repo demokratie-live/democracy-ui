@@ -1,6 +1,6 @@
 import { Platform } from 'react-native';
 import styled from 'styled-components/native';
-import { Lens } from '../../Atoms/Icons/icon';
+import { LensIcon } from '../../Atoms/Icons/icon';
 
 export const SearchBar = styled.View`
   height: 44px;
@@ -19,7 +19,7 @@ export const SearchInputWrapper = styled.View`
   margin-vertical: 8px;
 `;
 
-export const SearchInputIcon = styled(Lens).attrs(({ theme }) => ({
+export const SearchInputIcon = styled(LensIcon).attrs(({ theme }) => ({
   color: theme.colors.text.tertiary,
   width: 16,
   height: 16,

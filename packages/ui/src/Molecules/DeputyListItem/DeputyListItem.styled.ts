@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { Forward } from '../../Atoms/Icons/icon';
+import { ForwardIcon } from '../../Atoms/Icons/icon';
 
 export const DeputyListItem = styled.View`
   flex-direction: row;
@@ -19,6 +19,6 @@ export const Subtitle = styled.Text`
   color: ${({ theme }) => theme.colors.text.tertiary};
 `;
 
-export const Arrow = styled(Forward).attrs(({ theme }) => ({
+export const Arrow = styled(ForwardIcon).attrs(({ theme }) => ({
   color: theme.colors.text.tertiary,
 }))``;

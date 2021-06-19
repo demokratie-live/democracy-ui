@@ -14,8 +14,10 @@
     "lint": "yarn lint:ts && yarn lint:es",
     "lint:es": "eslint src/",
     "lint:ts": "tsc --noEmit",
-    "gen:icons": "npx @svgr/cli --icon --replace-attr-values '#030303={props.color}' --native --typescript -d src/Atoms/Icons/icon src/Atoms/Icons/svg",
-    "postgen:icons": "replace-in-file '/xmlnsXlink=\".*?\"/' '' src/Atoms/Icons/icon/*.tsx --isRegex && yarn prettier src/Atoms/Icons/icon/* --write"
+    "gen:icons": "svgr --icon --replace-attr-values '#030303={props.color}' --native --typescript -d src/Atoms/Icons/icon src/Atoms/Icons/svg",
+    "postgen:icons": "yarn gen:icons:replace:name && yarn gen:icons:replace:xmlnsXlink",
+    "gen:icons:replace:name": "replace-in-file '/default as (\\w+)/g' 'default as $1Icon' src/Atoms/Icons/icon/index.tsx --isRegex && yarn prettier src/Atoms/Icons/icon/index.tsx --write",
+    "gen:icons:replace:xmlnsXlink": "replace-in-file '/xmlnsXlink=\".*?\"/' '' src/Atoms/Icons/icon/*.tsx --isRegex && yarn prettier src/Atoms/Icons/icon/* --write"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

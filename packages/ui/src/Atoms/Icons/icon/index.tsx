@@ -1,7 +1,7 @@
-export { default as Avatar } from './Avatar';
-export { default as Checkmark } from './Checkmark';
-export { default as Forward } from './Forward';
-export { default as Lens } from './Lens';
-export { default as Minus } from './Minus';
-export { default as Plus } from './Plus';
-export { default as ThumbUp } from './ThumbUp';
+export { default as AvatarIcon } from './Avatar';
+export { default as CheckmarkIcon } from './Checkmark';
+export { default as ForwardIcon } from './Forward';
+export { default as LensIcon } from './Lens';
+export { default as MinusIcon } from './Minus';
+export { default as PlusIcon } from './Plus';
+export { default as ThumbUpIcon } from './ThumbUp';
