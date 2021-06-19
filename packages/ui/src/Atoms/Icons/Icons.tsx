@@ -3,7 +3,7 @@ import React from 'react';
 import { useTheme } from 'styled-components/native';
 
 import * as S from './Icons.styled';
-import { Forward, ThumbUp, Lens } from './icon/index';
+import * as AllIconSvgs from './icon/index';
 
 export const Icons: React.FC = () => {
   const theme = useTheme();
@@ -12,18 +12,15 @@ export const Icons: React.FC = () => {
 
   return (
     <S.Container>
-      <S.IconContainer>
-        <ThumbUp color={color} width="75" height="75" />
-        <S.Text>ThumbUp</S.Text>
-      </S.IconContainer>
-      <S.IconContainer>
-        <Forward color={color} width="75" height="75" />
-        <S.Text>Forward</S.Text>
-      </S.IconContainer>
-      <S.IconContainer>
-        <Lens color={color} width="75" height="75" />
-        <S.Text>Lens</S.Text>
-      </S.IconContainer>
+      {Object.keys(AllIconSvgs).map((key) => {
+        const IconCmp = (AllIconSvgs as { [key: string]: any })[key];
+        return (
+          <S.IconContainer key={key}>
+            <IconCmp fill={color} color={color} width="75" height="75" />
+            <S.Text>{key}</S.Text>
+          </S.IconContainer>
+        );
+      })}
     </S.Container>
   );
 };
