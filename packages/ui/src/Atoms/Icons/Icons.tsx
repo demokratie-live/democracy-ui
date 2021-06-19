@@ -3,7 +3,7 @@ import React from 'react';
 import { useTheme } from 'styled-components/native';
 
 import * as S from './Icons.styled';
-import { Forward, ThumbUp } from './icon/index';
+import { Forward, ThumbUp, Lens } from './icon/index';
 
 export const Icons: React.FC = () => {
   const theme = useTheme();
@@ -19,6 +19,10 @@ export const Icons: React.FC = () => {
       <S.IconContainer>
         <Forward color={color} width="75" height="75" />
         <S.Text>Forward</S.Text>
+      </S.IconContainer>
+      <S.IconContainer>
+        <Lens color={color} width="75" height="75" />
+        <S.Text>Lens</S.Text>
       </S.IconContainer>
     </S.Container>
   );

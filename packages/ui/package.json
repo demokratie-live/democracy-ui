@@ -14,7 +14,8 @@
     "lint": "yarn lint:ts && yarn lint:es",
     "lint:es": "eslint src/",
     "lint:ts": "tsc --noEmit",
-    "gen:icons": "npx @svgr/cli --icon --replace-attr-values '#030303={props.color}' --native --typescript -d src/Atoms/Icons/icon src/Atoms/Icons/svg"
+    "gen:icons": "npx @svgr/cli --icon --replace-attr-values '#030303={props.color}' --native --typescript -d src/Atoms/Icons/icon src/Atoms/Icons/svg",
+    "postgen:icons": "replace-in-file '/xmlnsXlink=\".*?\"/' '' src/Atoms/Icons/icon/*.tsx --isRegex && yarn prettier src/Atoms/Icons/icon/* --write"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -53,6 +54,7 @@
     "react": "^17.0.2",
     "react-native": "^0.64.0",
     "react-native-svg": "^12.1.1",
+    "replace-in-file": "^6.2.0",
     "rollup": "^2.41.2",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-image-files": "^1.4.2",
