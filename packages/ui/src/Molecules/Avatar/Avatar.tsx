@@ -5,7 +5,7 @@ import * as S from './Avatar.styled';
 
 export interface AvatarProps {
   profileImage: ProfileImageProps;
-  partyLogo: PartyLogoProps;
+  partyLogo?: PartyLogoProps;
 }
 
 export const Avatar: React.FC<AvatarProps> = ({
@@ -15,6 +15,8 @@ export const Avatar: React.FC<AvatarProps> = ({
 }) => (
   <S.Avatar width={profileImage.height} {...props}>
     <ProfileImage {...profileImage} />
-    <S.PartyLogo {...partyLogo} variant={profileImage.variant} />
+    {!!partyLogo && (
+      <S.PartyLogo {...partyLogo} variant={profileImage.variant} />
+    )}
   </S.Avatar>
 );
