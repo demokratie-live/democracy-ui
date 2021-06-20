@@ -1,9 +1,9 @@
-import { FlatList } from 'react-native';
+import { SectionList } from 'react-native';
 import styled from 'styled-components/native';
-import { DeputyListRenderItemProps } from './DeputyList';
+import { DeputyListRenderItemProps, SectionProps } from './DeputyList';
 
 export const DeputyList = styled(
-  FlatList as new () => FlatList<DeputyListRenderItemProps>,
+  SectionList as new () => SectionList<DeputyListRenderItemProps, SectionProps>,
 )``;
 
 export const Touchable = styled.TouchableOpacity``;
