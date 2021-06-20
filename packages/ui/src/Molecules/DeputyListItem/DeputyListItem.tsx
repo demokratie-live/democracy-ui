@@ -17,7 +17,9 @@ export const DeputyListItem: React.FC<DeputyListItemProps> = ({
   return (
     <S.DeputyListItem {...props}>
       <Avatar
-        partyLogo={{ ...avatar.partyLogo, width: 48 }}
+        partyLogo={
+          avatar.partyLogo ? { ...avatar.partyLogo, width: 48 } : undefined
+        }
         profileImage={{
           ...avatar.profileImage,
           height: 48,
