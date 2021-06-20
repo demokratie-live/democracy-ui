@@ -10,6 +10,7 @@ export * from './Atoms/Button/StateButton';
 export * from './Atoms/Button/VoteButton';
 export * from './Atoms/Chart/Bar';
 export * from './Atoms/Icons';
+export * from './Atoms/ListItem/Section';
 export * from './Atoms/ListItem/Seperator';
 export * from './Atoms/ListItem/VotesIndex';
 export * from './Atoms/PieChart';
