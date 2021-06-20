@@ -12,7 +12,8 @@ export interface DeputyListRenderItemProps extends DeputyListItemProps {
   onPress: (id: string) => void;
 }
 
-export interface DeputyListProps extends FlatList<DeputyListRenderItemProps> {
+export interface DeputyListProps
+  extends Partial<FlatList<DeputyListRenderItemProps>> {
   deputies: DeputyListRenderItemProps[];
 }
 

@@ -2,11 +2,8 @@ import React from 'react';
 import { ImageSourcePropType } from 'react-native';
 import * as S from './ProfileImage.styled';
 
-export interface ProfileImageBaseProps {
+export interface ProfileImageBaseProps extends S.ImageProps {
   source: ImageSourcePropType;
-  width: number;
-  height: number;
-  borderRadius?: number;
 }
 
 export const ProfileImageBase: React.FC<ProfileImageBaseProps> = ({

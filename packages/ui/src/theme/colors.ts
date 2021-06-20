@@ -144,7 +144,7 @@ export const darkColors: Colors = {
   },
   text: {
     primary: '#FFFFFF',
-    secondary: '#424242',
+    secondary: '#FFFFFF',
     tertiary: '#B5B5B5',
     colored: '#4494D3',
     danger: '#EC3E31',

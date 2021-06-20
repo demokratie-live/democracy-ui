@@ -18,7 +18,11 @@ export const DeputyListItem: React.FC<DeputyListItemProps> = ({
     <S.DeputyListItem {...props}>
       <Avatar
         partyLogo={{ ...avatar.partyLogo, width: 48 }}
-        profileImage={{ ...avatar.profileImage, height: 48, variant: 'round' }}
+        profileImage={{
+          ...avatar.profileImage,
+          height: 48,
+          variant: 'round',
+        }}
       />
       <S.TextWrapper>
         <S.Title>{title}</S.Title>

@@ -20,5 +20,7 @@ export const Subtitle = styled.Text`
 `;
 
 export const Arrow = styled(ForwardIcon).attrs(({ theme }) => ({
-  color: theme.colors.text.tertiary,
+  fill: theme.colors.text.tertiary,
+  width: theme.fontSizes.large,
+  height: theme.fontSizes.large,
 }))``;
