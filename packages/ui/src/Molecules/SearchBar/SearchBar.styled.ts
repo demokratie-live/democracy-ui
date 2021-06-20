@@ -27,7 +27,6 @@ export const SearchInputIcon = styled(LensIcon).attrs(({ theme }) => ({
 
 export const SearchInput = styled.TextInput.attrs(({ theme }) => ({
   clearButtonMode: 'always',
-  autoFocus: true,
   placeholderTextColor: theme.colors.text.tertiary,
   underlineColorAndroid: 'transparent',
   selectionColor: theme.colors.text.primary,
