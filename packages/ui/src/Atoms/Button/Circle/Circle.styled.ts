@@ -10,7 +10,7 @@ export const Circle = styled.TouchableOpacity<CircleProps>`
   height: ${({ size }) => `${size}px`};
 
   border-color: ${({ color }) => `${color}CC`};
-  border-radius: ${({ size }) => `${size / 2}px`}; // TODO Try 50%
+  border-radius: ${({ size }) => `${size / 2}px`};
   align-items: center;
   justify-content: center;
   background-color: ${({ color }) => color};

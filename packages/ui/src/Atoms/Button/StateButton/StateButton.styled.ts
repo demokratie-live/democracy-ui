@@ -26,7 +26,4 @@ export const Icon = styled(Svg as Svg & IconCmp).attrs(
     height: size,
     fill: color,
   }),
-)<IconProps>`
-  /* margin-left: -0.5px;
-  margin-top: -0.5px; */
-` as IconCmp;
+)<IconProps>`` as IconCmp;
