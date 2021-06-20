@@ -15,6 +15,7 @@ export interface DeputyListRenderItemProps extends DeputyListItemProps {
 
 export interface DeputyListProps {
   deputies: DeputyListRenderItemProps[];
+  editMode?: boolean;
 }
 
 export interface DeputyListSectionProps {
@@ -26,7 +27,13 @@ export type SectionDataProps = SectionListData<
   DeputyListSectionProps
 >[];
 
-const renderItem: ListRenderItem<DeputyListRenderItemProps> = ({ item }) => {
+const renderItem: ({
+  editMode,
+}: {
+  editMode?: boolean;
+}) => ListRenderItem<DeputyListRenderItemProps> = ({ editMode = false }) => ({
+  item,
+}) => {
   const onPress = () => {
     console.log('onPress', item.id);
     item.onPress(item.id);
@@ -34,13 +41,14 @@ const renderItem: ListRenderItem<DeputyListRenderItemProps> = ({ item }) => {
 
   return (
     <S.Touchable onPress={onPress}>
-      <DeputyListItem {...item} />
+      <DeputyListItem {...item} editMode={editMode} />
     </S.Touchable>
   );
 };
 
 export const DeputyList: React.FC<DeputyListProps> = ({
   deputies,
+  editMode = false,
   ...props
 }) => {
   const sections = deputies.reduce<SectionDataProps>((prev, deputy) => {
@@ -66,7 +74,7 @@ export const DeputyList: React.FC<DeputyListProps> = ({
     <S.DeputyList
       sections={sections}
       // data={deputies}
-      renderItem={renderItem}
+      renderItem={renderItem({ editMode })}
       keyExtractor={({ id }) => id}
       ItemSeparatorComponent={() => <Seperator />}
       renderSectionHeader={({ section }) => <Section title={section.title} />}

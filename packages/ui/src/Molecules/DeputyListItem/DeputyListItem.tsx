@@ -6,16 +6,31 @@ export interface DeputyListItemProps {
   avatar: AvatarProps;
   title: string;
   subtitle?: string;
+  editMode?: boolean;
+  state?: 'favorized' | 'checked' | 'none';
 }
 
 export const DeputyListItem: React.FC<DeputyListItemProps> = ({
   avatar,
   title,
   subtitle,
+  editMode = false,
+  state = 'none',
   ...props
 }) => {
   return (
     <S.DeputyListItem {...props}>
+      {editMode ? (
+        <S.State
+          state={
+            state === 'checked'
+              ? 'Checked'
+              : state === 'favorized'
+              ? 'Remove'
+              : 'Add'
+          }
+        />
+      ) : null}
       <Avatar
         partyLogo={
           avatar.partyLogo ? { ...avatar.partyLogo, width: 48 } : undefined
@@ -30,7 +45,7 @@ export const DeputyListItem: React.FC<DeputyListItemProps> = ({
         <S.Title>{title}</S.Title>
         <S.Subtitle>{subtitle}</S.Subtitle>
       </S.TextWrapper>
-      <S.Arrow />
+      {!editMode ? <S.Arrow /> : null}
     </S.DeputyListItem>
   );
 };

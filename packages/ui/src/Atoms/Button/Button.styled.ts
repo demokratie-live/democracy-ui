@@ -9,7 +9,6 @@ export interface ButtonProps {
 export const Button = styled.TouchableOpacity<ButtonProps>`
   width: 100%;
   height: 40px;
-
   align-items: center;
   justify-content: center;
   border-color: ${({ color }) => `${color}CC`};

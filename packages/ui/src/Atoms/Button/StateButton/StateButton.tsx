@@ -9,7 +9,10 @@ export interface StateButtonProps {
   state: STATE;
 }
 
-export const StateButton: React.FC<StateButtonProps> = ({ state }) => {
+export const StateButton: React.FC<StateButtonProps> = ({
+  state,
+  ...props
+}) => {
   const theme = useTheme();
 
   let IconCmp: typeof CheckmarkIcon | typeof PlusIcon | typeof MinusIcon;
@@ -33,7 +36,7 @@ export const StateButton: React.FC<StateButtonProps> = ({ state }) => {
   }
 
   return (
-    <S.CircleButton size={23} color={color}>
+    <S.CircleButton size={23} color={color} {...props}>
       <S.Icon as={IconCmp} color={theme.colors.text.secondary} size={11} />
     </S.CircleButton>
   );

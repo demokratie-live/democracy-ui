@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { StateButton } from '../../Atoms/Button/StateButton';
 import { ForwardIcon } from '../../Atoms/Icons/icon';
 
 export const DeputyListItem = styled.View`
@@ -24,3 +25,7 @@ export const Arrow = styled(ForwardIcon).attrs(({ theme }) => ({
   width: theme.fontSizes.large,
   height: theme.fontSizes.large,
 }))``;
+
+export const State = styled(StateButton)`
+  margin-right: ${({ theme }) => theme.spaces.default};
+`;
