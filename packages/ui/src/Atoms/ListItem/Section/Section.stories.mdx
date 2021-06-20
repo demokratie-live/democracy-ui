@@ -1,0 +1,12 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Section } from '.';
+
+<Meta title="Atoms/ListItem/Section" component={Section} />
+
+# Welcome to Storybook Atoms
+
+<Canvas>
+  <Story name="default" args={{ title: 'A' }}>
+    {Section.bind({})}
+  </Story>
+</Canvas>
