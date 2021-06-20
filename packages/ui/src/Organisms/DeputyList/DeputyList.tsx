@@ -4,14 +4,15 @@ import {
   DeputyListItem,
   DeputyListItemProps,
 } from '../../Molecules/DeputyListItem';
-import { ListRenderItem } from 'react-native';
+import { FlatList, ListRenderItem } from 'react-native';
+import { Seperator } from '../../Atoms/ListItem/Seperator';
 
 export interface DeputyListRenderItemProps extends DeputyListItemProps {
   id: string;
   onPress: (id: string) => void;
 }
 
-export interface DeputyListProps {
+export interface DeputyListProps extends FlatList<DeputyListRenderItemProps> {
   deputies: DeputyListRenderItemProps[];
 }
 
@@ -37,6 +38,7 @@ export const DeputyList: React.FC<DeputyListProps> = ({
       data={deputies}
       renderItem={renderItem}
       keyExtractor={({ id }) => id}
+      ItemSeparatorComponent={() => <Seperator />}
       {...props}
     />
   );
