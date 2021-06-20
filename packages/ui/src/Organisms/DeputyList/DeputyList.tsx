@@ -4,8 +4,9 @@ import {
   DeputyListItem,
   DeputyListItemProps,
 } from '../../Molecules/DeputyListItem';
-import { ListRenderItem, SectionListData, Text } from 'react-native';
+import { ListRenderItem, SectionListData } from 'react-native';
 import { Seperator } from '../../Atoms/ListItem/Seperator';
+import { Section } from '../../Atoms/ListItem/Section';
 
 export interface DeputyListRenderItemProps extends DeputyListItemProps {
   id: string;
@@ -16,13 +17,13 @@ export interface DeputyListProps {
   deputies: DeputyListRenderItemProps[];
 }
 
-export interface SectionProps {
+export interface DeputyListSectionProps {
   title: string;
 }
 
 export type SectionDataProps = SectionListData<
   DeputyListRenderItemProps,
-  SectionProps
+  DeputyListSectionProps
 >[];
 
 const renderItem: ListRenderItem<DeputyListRenderItemProps> = ({ item }) => {
@@ -68,7 +69,7 @@ export const DeputyList: React.FC<DeputyListProps> = ({
       renderItem={renderItem}
       keyExtractor={({ id }) => id}
       ItemSeparatorComponent={() => <Seperator />}
-      renderSectionHeader={({ section }) => <Text>{section.title}</Text>}
+      renderSectionHeader={({ section }) => <Section title={section.title} />}
       {...props}
     />
   );
