@@ -4,7 +4,7 @@ import {
   DeputyListItem,
   DeputyListItemProps,
 } from '../../Molecules/DeputyListItem';
-import { FlatList, ListRenderItem } from 'react-native';
+import { ListRenderItem, SectionListData, Text } from 'react-native';
 import { Seperator } from '../../Atoms/ListItem/Seperator';
 
 export interface DeputyListRenderItemProps extends DeputyListItemProps {
@@ -12,10 +12,18 @@ export interface DeputyListRenderItemProps extends DeputyListItemProps {
   onPress: (id: string) => void;
 }
 
-export interface DeputyListProps
-  extends Partial<FlatList<DeputyListRenderItemProps>> {
+export interface DeputyListProps {
   deputies: DeputyListRenderItemProps[];
 }
+
+export interface SectionProps {
+  title: string;
+}
+
+export type SectionDataProps = SectionListData<
+  DeputyListRenderItemProps,
+  SectionProps
+>[];
 
 const renderItem: ListRenderItem<DeputyListRenderItemProps> = ({ item }) => {
   const onPress = () => {
@@ -34,12 +42,33 @@ export const DeputyList: React.FC<DeputyListProps> = ({
   deputies,
   ...props
 }) => {
+  const sections = deputies.reduce<SectionDataProps>((prev, deputy) => {
+    const sectionTitle = deputy.title.slice(0, 1);
+    const sectionExists = prev.some(({ title }) => title === sectionTitle);
+    if (sectionExists) {
+      return prev.map((section) =>
+        section.title === sectionTitle
+          ? { ...section, data: [...section.data, deputy] }
+          : section,
+      );
+    }
+    return [
+      ...prev,
+      {
+        title: sectionTitle,
+        data: [deputy],
+      },
+    ];
+  }, []);
+
   return (
     <S.DeputyList
-      data={deputies}
+      sections={sections}
+      // data={deputies}
       renderItem={renderItem}
       keyExtractor={({ id }) => id}
       ItemSeparatorComponent={() => <Seperator />}
+      renderSectionHeader={({ section }) => <Text>{section.title}</Text>}
       {...props}
     />
   );
