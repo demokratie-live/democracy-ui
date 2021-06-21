@@ -16,6 +16,8 @@ export interface DeputyListRenderItemProps extends DeputyListItemProps {
 export interface DeputyListProps {
   deputies: DeputyListRenderItemProps[];
   editMode?: boolean;
+  constituencyDeputy?: string;
+  favorizedDeputies?: string[];
 }
 
 export interface DeputyListSectionProps {
@@ -32,15 +34,14 @@ const renderItem: ({
 }: {
   editMode?: boolean;
 }) => ListRenderItem<DeputyListRenderItemProps> = ({ editMode = false }) => ({
-  item,
+  item: { onPress, ...item },
 }) => {
-  const onPress = () => {
-    console.log('onPress', item.id);
-    item.onPress(item.id);
+  const handleOnPress = () => {
+    onPress(item.id);
   };
 
   return (
-    <S.Touchable onPress={onPress}>
+    <S.Touchable onPress={handleOnPress}>
       <DeputyListItem {...item} editMode={editMode} />
     </S.Touchable>
   );
@@ -49,31 +50,57 @@ const renderItem: ({
 export const DeputyList: React.FC<DeputyListProps> = ({
   deputies,
   editMode = false,
+  constituencyDeputy,
+  favorizedDeputies = [],
   ...props
 }) => {
-  const sections = deputies.reduce<SectionDataProps>((prev, deputy) => {
-    const sectionTitle = deputy.title.slice(0, 1);
-    const sectionExists = prev.some(({ title }) => title === sectionTitle);
-    if (sectionExists) {
-      return prev.map((section) =>
-        section.title === sectionTitle
-          ? { ...section, data: [...section.data, deputy] }
-          : section,
-      );
-    }
-    return [
-      ...prev,
-      {
-        title: sectionTitle,
-        data: [deputy],
-      },
-    ];
-  }, []);
+  const sections = deputies.reduce<SectionDataProps>(
+    (prev, deputy) => {
+      if (constituencyDeputy === deputy.id) {
+        return prev.map((section) =>
+          section.title === 'Favoriten'
+            ? {
+                ...section,
+                data: [{ ...deputy, state: 'checked' }, ...section.data],
+              }
+            : section,
+        );
+      }
+      if (favorizedDeputies.includes(deputy.id)) {
+        return prev.map((section) =>
+          section.title === 'Favoriten'
+            ? {
+                ...section,
+                data: [...section.data, { ...deputy, state: 'favorized' }],
+              }
+            : section,
+        );
+      }
+      const sectionTitle = deputy.title.slice(0, 1);
+      const sectionExists = prev.some(({ title }) => title === sectionTitle);
+      if (sectionExists) {
+        return prev.map((section) =>
+          section.title === sectionTitle
+            ? { ...section, data: [...section.data, deputy] }
+            : section,
+        );
+      }
+      return [
+        ...prev,
+        {
+          title: sectionTitle,
+          data: [deputy],
+        },
+      ];
+    },
+    favorizedDeputies.length > 0 || constituencyDeputy
+      ? [{ title: 'Favoriten', data: [] }]
+      : [],
+  );
 
   return (
     <S.DeputyList
       sections={sections}
-      // data={deputies}
       renderItem={renderItem({ editMode })}
       keyExtractor={({ id }) => id}
       ItemSeparatorComponent={() => <Seperator />}

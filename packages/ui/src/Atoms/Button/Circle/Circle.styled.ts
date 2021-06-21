@@ -1,8 +1,10 @@
+import { TouchableOpacityProps } from 'react-native';
 import styled from 'styled-components/native';
 
 export interface CircleProps {
   size: number;
   color: string;
+  onPress?: TouchableOpacityProps['onPress'];
 }
 
 export const Circle = styled.TouchableOpacity<CircleProps>`

@@ -8,6 +8,7 @@ export interface DeputyListItemProps {
   subtitle?: string;
   editMode?: boolean;
   state?: 'favorized' | 'checked' | 'none';
+  onStatePress?: (state: 'favorized' | 'checked' | 'none') => void;
 }
 
 export const DeputyListItem: React.FC<DeputyListItemProps> = ({
@@ -16,12 +17,14 @@ export const DeputyListItem: React.FC<DeputyListItemProps> = ({
   subtitle,
   editMode = false,
   state = 'none',
+  onStatePress,
   ...props
 }) => {
   return (
     <S.DeputyListItem {...props}>
       {editMode ? (
         <S.State
+          onPress={onStatePress && (() => onStatePress(state))}
           state={
             state === 'checked'
               ? 'Checked'
