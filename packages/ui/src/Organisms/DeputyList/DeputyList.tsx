@@ -4,7 +4,11 @@ import {
   DeputyListItem,
   DeputyListItemProps,
 } from '../../Molecules/DeputyListItem';
-import { ListRenderItem, SectionListData } from 'react-native';
+import {
+  ListRenderItem,
+  SectionListData,
+  SectionListProps,
+} from 'react-native';
 import { Seperator } from '../../Atoms/ListItem/Seperator';
 import { Section } from '../../Atoms/ListItem/Section';
 
@@ -13,7 +17,8 @@ export interface DeputyListRenderItemProps extends DeputyListItemProps {
   onPress: (id: string) => void;
 }
 
-export interface DeputyListProps {
+export interface DeputyListProps
+  extends Partial<SectionListProps<DeputyListRenderItemProps>> {
   deputies: DeputyListRenderItemProps[];
   editMode?: boolean;
   constituencyDeputy?: string;
@@ -24,10 +29,7 @@ export interface DeputyListSectionProps {
   title: string;
 }
 
-export type SectionDataProps = SectionListData<
-  DeputyListRenderItemProps,
-  DeputyListSectionProps
->[];
+export type SectionDataProps = SectionListData<DeputyListRenderItemProps>[];
 
 const renderItem: ({
   editMode,
