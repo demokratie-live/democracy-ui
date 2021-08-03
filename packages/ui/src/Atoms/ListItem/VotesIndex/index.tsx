@@ -8,7 +8,7 @@ export interface VotesIndexProps {
 
 const Number = styled.Text<Pick<VotesIndexProps, 'voted'>>`
   color: ${({ voted, theme }) =>
-    voted ? theme.colors.text.colored : theme.colors.text.primary};
+    voted ? theme.colors.text.colored : theme.colors.text.tertiary};
   font-weight: bold;
 `;
 

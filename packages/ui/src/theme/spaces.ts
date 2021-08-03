@@ -1,3 +1,3 @@
 export const spaces = {
-  default: '11px',
+  default: '18px',
 } as const;

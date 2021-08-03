@@ -4,7 +4,7 @@ module.exports = {
   stories: [
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)",
-    "../packages/**/*.stories.mdx",
+    "../packages/**/*.stories.@(mdx|ts|tsx)",
   ],
 
   addons: [
@@ -27,20 +27,20 @@ module.exports = {
     check: true,
   },
 
-  babel: async (options) => ({
-    ...options,
-    plugins: [
-      ...options.plugins,
-      [
-        "rename-jsx-attribute",
-        {
-          attributes: {
-            onPress: "onClick",
-          },
-        },
-      ],
-    ],
-  }),
+  // babel: async (options) => ({
+  //   ...options,
+  //   plugins: [
+  //     ...options.plugins,
+  //     [
+  //       "rename-jsx-attribute",
+  //       {
+  //         attributes: {
+  //           onPress: "onClick",
+  //         },
+  //       },
+  //     ],
+  //   ],
+  // }),
 
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias = {
