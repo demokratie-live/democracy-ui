@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 export const ProcedureListItem = styled.View`
   flex-direction: row;
   padding-horizontal: ${({ theme }) => theme.spaces.default};
-  padding-vertical: ${({ theme }) => theme.spaces.default};
+  padding-vertical: ${({ theme }) => theme.spaces.small};
 `;
 
 export const TextContainer = styled.View`

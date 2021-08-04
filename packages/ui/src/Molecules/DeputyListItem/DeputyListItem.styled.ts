@@ -4,7 +4,8 @@ import { ForwardIcon } from '../../Atoms/Icons/icon';
 
 export const DeputyListItem = styled.View`
   flex-direction: row;
-  padding: ${({ theme }) => theme.spaces.default};
+  padding-horizontal: ${({ theme }) => theme.spaces.default};
+  padding-vertical: ${({ theme }) => theme.spaces.small};
   align-items: center;
 `;
 
