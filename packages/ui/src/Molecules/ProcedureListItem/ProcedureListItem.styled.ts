@@ -4,6 +4,7 @@ export const ProcedureListItem = styled.View`
   flex-direction: row;
   padding-horizontal: ${({ theme }) => theme.spaces.default};
   padding-vertical: ${({ theme }) => theme.spaces.small};
+  min-height: 100px;
 `;
 
 export const TextContainer = styled.View`
