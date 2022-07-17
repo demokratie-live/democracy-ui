@@ -1,10 +1,11 @@
 import React from 'react';
+import { TouchableOpacityProps } from 'react-native';
 import { useTheme } from 'styled-components/native';
 import { DefaultTheme } from '../../theme';
 import * as S from './Button.styled';
 
 type Variants = 'primary' | 'secondary' | 'danger' | 'danger-secondary';
-export interface ButtonProps {
+export interface ButtonProps extends TouchableOpacityProps {
   children: string;
   variant: Variants;
 }

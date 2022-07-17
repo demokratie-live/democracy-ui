@@ -7,7 +7,7 @@ export interface ButtonProps {
 }
 
 export const Button = styled.TouchableOpacity<ButtonProps>`
-  width: 100%;
+  align-self: stretch;
   height: 40px;
   align-items: center;
   justify-content: center;
@@ -20,6 +20,5 @@ export const Label = styled.Text<ButtonProps>`
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 1px;
-
   color: ${({ color }) => `${color}`};
 `;
