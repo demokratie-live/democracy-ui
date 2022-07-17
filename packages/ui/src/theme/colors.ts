@@ -69,7 +69,7 @@ export const lightColors: Colors = {
   text: {
     primary: '#030303',
     secondary: '#FFFFFF',
-    tertiary: '#8F8E94',
+    tertiary: '#5B595B',
     colored: '#4494D3',
     danger: '#EC3E31',
     seperator: '#6D6D72',
