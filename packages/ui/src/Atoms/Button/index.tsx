@@ -8,13 +8,14 @@ type Variants = 'primary' | 'secondary' | 'danger' | 'danger-secondary';
 export interface ButtonProps extends TouchableOpacityProps {
   children: string;
   variant: Variants;
+  disabled?: boolean;
 }
 
-const getVariant = (variant: Variants, theme: DefaultTheme) => {
+const getVariant = (variant: Variants, disabled: boolean, theme: DefaultTheme) => {
   const variants = {
     primary: {
       colors: {
-        background: theme.colors.primary,
+        background: !disabled ? theme.colors.primary: theme.colors.text.seperator,
         label: theme.colors.text.secondary,
       },
     },
@@ -44,14 +45,15 @@ const getVariant = (variant: Variants, theme: DefaultTheme) => {
 export const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'primary',
+  disabled = false,
   ...props
 }) => {
   const theme = useTheme();
 
-  const variantData = getVariant(variant, theme);
+  const variantData = getVariant(variant, disabled, theme);
 
   return (
-    <S.Button color={variantData.colors.background} {...props}>
+    <S.Button color={variantData.colors.background} disabled={disabled} {...props}>
       <S.Label color={variantData.colors.label}>{children}</S.Label>
     </S.Button>
   );
