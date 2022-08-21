@@ -8,11 +8,11 @@ export interface ButtonProps {
 
 export const Button = styled.TouchableOpacity<ButtonProps>`
   align-self: stretch;
-  height: 40px;
   align-items: center;
   justify-content: center;
   border-color: ${({ color }) => `${color}CC`};
   background-color: ${({ color }) => `${color}`};
+  padding-vertical: ${({ theme }) => theme.spaces.default};
 `;
 
 export const Label = styled.Text<ButtonProps>`
