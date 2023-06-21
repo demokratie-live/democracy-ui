@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Pagination } from '.';
+import { PaginationStory } from './Pagination.stories';
+import { lightTheme } from '../../theme';
+
+<Meta
+  title="Molecules/Pagination"
+  component={Pagination}
+  subcomponents={{}}
+/>
+
+# Welcome to Storybook Atoms
+
+<Canvas>
+  <Story
+    name="Pagination"
+    args={{
+      length: 3,
+      active: 1
+    }}
+  >
+    {PaginationStory.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Pagination} />

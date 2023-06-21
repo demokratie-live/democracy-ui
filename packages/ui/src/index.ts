@@ -27,6 +27,7 @@ export * from './Molecules/Charts/Donut';
 export * from './Molecules/Charts/BarChart';
 export * from './Molecules/ContentLoader';
 export * from './Molecules/DeputyListItem';
+export * from './Molecules/Pagination';
 export * from './Molecules/SearchBar';
 
 /** Organisms */
